@@ -1,0 +1,326 @@
+/* easyui样式修改 */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+.panel-title {
+	/*修改侧边一级文字颜色*/
+	color: #fff;
+	font-weight: 200;
+}
+
+.panel-body,
+.panel-body-noheader {
+	border-width: 0;
+}
+
+.accordion .accordion-header {
+	/*修改侧边一级背景透明*/
+	background: rgba(238, 238, 238, 0.096);
+}
+
+.easyui-accordion>div {
+	/*侧边一级下面框*/
+	border-bottom: 1px solid rgba(222, 212, 212, 0.37);
+}
+
+.easyui-accordion>div:last-child {
+	/*最后一个清除样式*/
+	border-bottom: none
+}
+
+.layout-panel-west {
+	/* background-color: #393D49; */
+	background: url('img/left-bg2.jpg');
+	background-size: 165% 165%
+	/*侧边全局背景色*/
+}
+
+.layout-panel-west .panel-header {
+	/*侧面一级标题样式重置*/
+	padding: 10px 10px;
+	border-bottom: none;
+	overflow: auto;
+}
+
+.layout-panel-west .panel-body {
+	/*侧边一级内容样式重置*/
+	border: none;
+	background: transparent;
+}
+
+.layout-panel-west .panel-body .panel-tool {
+	/*侧边下拉按钮位置*/
+	right: 10px;
+}
+
+.accordion .accordion-header-selected {
+	/*侧面二级选中背景*/
+	background-color: rgb(19, 138, 86);
+}
+
+.layout-panel-west .easyui-accordion {
+	/*侧面二级背景透明*/
+	background-color: transparent;
+}
+
+.layout-panel-west .easyui-accordion .funItem {
+	/*侧边二级文字内容样式*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	transition: all 0.3s;
+	width: 100%;
+	margin: 1px 0;
+	padding-top: 4px;
+	padding-left: 20px;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 14px;
+	color: #ccc;
+}
+
+.layout-panel-west .easyui-accordion .funItem:hover {
+	/*侧边二级悬浮样式*/
+	background: rgb(89, 163, 131);
+	color: #fff;
+	width: 80% !important;
+	transform: translateX(20px)
+}
+
+.layout-panel-west .easyui-accordion .funItem:hover {
+	color: #fff;
+	/*左侧二级*/
+}
+
+.layout-panel-west .accordion-header {
+	/*侧边一级导航*/
+	transition: all 0.3s;
+	border-left: 10px transparent solid;
+}
+
+
+/* .layout-panel-west .accordion-header:hover {
+	border-left: 10px rgb(210, 220, 10) solid ;
+}
+
+.layout-panel-west .accordion-header-selected {
+	border-left: 10px rgb(250, 220, 10) solid;
+} */
+
+.layout-panel-west span {
+	/*左侧边栏中菜单小圆点统一样式*/
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	margin-bottom: 2px;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.layout-panel-west span.users-Hover {
+	/*左侧边栏中菜单悬浮时小圆点样式*/
+	background: rgb(250, 220, 10) !important;
+}
+
+.layout-panel-west span.users-Click {
+	/*左侧边栏中菜单被选中小圆点样式*/
+	background: rgb(250, 220, 10);
+}
+
+.layout-panel-west span.users-unClick {
+	/*左侧边栏中菜单未选中小圆点样式*/
+	background: #fff;
+}
+
+.tabs {
+	/*选项卡区域底部边框*/
+	/* border-bottom: 1px solid rgba(83, 166, 226, 0.4); */
+	box-shadow: 0 2px 5px 0 #333;
+}
+
+.usersTable .tabs-header {
+	/* 选项卡区域背景 */
+	background: rgb(245, 245, 245);
+}
+
+.usersTable .panel-body {
+	/* tab选项卡打开窗口内容清除滚动条 */
+	overflow: hidden;
+}
+
+.usersTable .tabs li a.tabs-close {
+	/*关闭按钮*/
+	background: url(images/tabs_icons.png) no-repeat -34px center;
+}
+
+.usersTable .tabs li a.tabs-inner {
+	/*固定选项卡高度*/
+	height: 26px !important;
+}
+
+.usersTable .tabs li a:nth-child(1) {
+	/*设置tab选项卡默认样式*/
+	color: #eee;
+	border: none;
+	background: linear-gradient(rgba(83, 166, 226, 0.6), rgba(10, 111, 183, 0.8));
+}
+
+.usersTable .tabs li.tabs-selected a:nth-child(1) {
+	/*设置tab选项卡选中时默认样式*/
+	background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
+	border: none;
+	color: #eee;
+}
+
+.usersTable .tabs li a.tabs-inner:hover {
+	/*设置tab选项卡悬浮样式*/
+	background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
+	border: none;
+}
+
+
+/* 用户自定义样式 */
+
+.header {
+	/*页面顶部*/
+	overflow: hidden;
+	height: 85px;
+	border-bottom: 1px solid rgb(19, 134, 44);
+}
+
+.system-logo {
+	/*系统logo图*/
+	position: relative;
+	top: 3px;
+	left: -12px;
+	float: left
+}
+
+.search-input {
+	/*头部检索外层div*/
+	float: left;
+	line-height: 35px;
+	border: #bbb 1px solid;
+	margin-top: 25px;
+	margin-left: 20px;
+	border-radius: 5px;
+	padding: 0px 5px;
+}
+
+.search-input>input {
+	/*头部检索框*/
+	color: #666;
+	border: none;
+	margin-left: 15px;
+	font-size: 16px;
+	width: 180px;
+	outline: none;
+}
+
+.header-right-btn {
+	/*头部右侧按钮*/
+	line-height: 40px;
+	text-align: right;
+	float: right;
+	margin-top: 25px;
+	margin-right: 30px;
+}
+
+.header-right-btn>a>span {
+	/*头部右侧按钮图标*/
+	color: rgb(82, 147, 197);
+	margin-right: 5px;
+	position: relative;
+	top: 6px;
+}
+
+.search-input>span {
+	/*检索框图标*/
+	position: relative;
+	left: 5px;
+	bottom: -2px;
+}
+
+.users-icon{
+	/*用户名前的图标*/
+	position: relative;
+	top: -4px;
+	font-size: 16px;
+}
+.users-name{
+	color: rgb(82, 147, 197);margin-right:5px;position:relative;top:6px;
+}
+.login-out{
+	color: rgb(46, 135, 204);margin-left: 20px; cursor: pointer;
+}
+
+.users-bottom-copy {
+	/*底部技术支持*/
+	box-sizing: border-box;
+	color: #333;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	border-top: 1px solid rgb(83, 166, 226);
+	overflow: hidden;
+}
+
+
+/* a标签样式默认值修改 */
+
+a {
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+a:link {
+	color: rgb(82, 147, 197);
+}
+
+a:visited {
+	color: rgb(133, 192, 240);
+}
+
+a:hover {
+	color: rgb(133, 192, 240);
+}
+
+a:active {
+	color: rgb(82, 147, 197)
+}
+
+
+/*输入框提示文字颜色*/
+
+input:-moz-placeholder {
+	color: #999;
+}
+
+input:-ms-input-placeholder {
+	color: #999;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
+/*标签页下窗口背景*/
+
+.MainPageBg,
+iframe {
+	background: url(img/ifream-bg.png);
+	background-size: 100% 100%;
+}
+
+.select {
+	/*侧边二级选中样式 通过JS添加此类*/
+	color: #fff !important;
+	background: rgb(89, 163, 131);
+	width: 100%;
+}

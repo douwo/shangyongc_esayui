@@ -1,0 +1,52 @@
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+.textl{
+    float: left;
+    width: 15%;
+    text-align: right;
+}
+.text_div{
+    float: left;
+    width: 83%;
+    border: 1px solid #eee;
+}
+.formdiv {
+    width: 94%;
+    border-bottom: 2px dashed #eee;
+}
+.formwull {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    height:100%;
+    position: relative;
+}
+.text_div textarea{
+	float: left;
+	width: 93.5%;
+	height: 100%;
+}
+.del_a {
+	margin-top:15px;
+    float: right;
+    display: block;
+    width: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.formwull .btn {
+    padding: 0px 5px;
+    float: right;
+}
+.tr {
+    text-align: right;
+    color: #d15b47;
+}
