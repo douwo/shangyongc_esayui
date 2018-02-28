@@ -37,6 +37,7 @@ body {
 	/* background-color: #393D49; */
 	background: url('img/left-bg2.jpg');
 	background-size: 165% 165%
+	/*background-size: 100% 100%*/
 	/*侧边全局背景色*/
 }
 
@@ -59,12 +60,12 @@ body {
 }
 
 .accordion .accordion-header-selected {
-	/*侧面二级选中背景*/
+	/*侧面一级选中背景*/
 	background-color: rgb(19, 138, 86);
 }
 
 .layout-panel-west .easyui-accordion {
-	/*侧面二级背景透明*/
+	/*侧面一、二级背景透明*/
 	background-color: transparent;
 }
 
@@ -73,7 +74,7 @@ body {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	transition: all 0.3s;
+	transition: all 0.3s ease-in;
 	width: 100%;
 	margin: 1px 0;
 	padding-top: 4px;
@@ -86,15 +87,18 @@ body {
 
 .layout-panel-west .easyui-accordion .funItem:hover {
 	/*侧边二级悬浮样式*/
-	background: rgb(89, 163, 131);
+	/*background: rgba(89, 163, 131,0.8);*/
+	background: linear-gradient(to bottom, rgba(89, 163, 131,0.9) , rgba(89, 163, 131,0.7));
 	color: #fff;
 	width: 80% !important;
-	transform: translateX(20px)
+	transform: translateX(20px);
 }
-
-.layout-panel-west .easyui-accordion .funItem:hover {
-	color: #fff;
-	/*左侧二级*/
+.layout-panel-west .easyui-accordion .funItem.select {
+	/*侧边二级选中样式 通过JS添加此类*/
+	color: #fff !important;
+	background: linear-gradient(to bottom, rgba(89, 163, 131,0.9) , rgba(89, 163, 131,0.7));
+	/*background: rgb(89, 163, 131) !important;*/
+	width: 100%;
 }
 
 .layout-panel-west .accordion-header {
@@ -318,9 +322,3 @@ iframe {
 	background-size: 100% 100%;
 }
 
-.select {
-	/*侧边二级选中样式 通过JS添加此类*/
-	color: #fff !important;
-	background: rgb(89, 163, 131);
-	width: 100%;
-}
