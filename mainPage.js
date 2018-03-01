@@ -1,4 +1,11 @@
 $(function () {
+	$('.search-input>input').focusin(function(){
+		$('.search-input').css('width','230px')
+	})
+	$('.search-input>input').blur(function(){
+		$('.search-input').css('width','auto')
+	})
+
     $('.easyui-accordion .funItem').click(function () {
         $('.left-nav .funItem').removeClass('select');
         $(this).addClass('select');
@@ -139,3 +146,4 @@ function logout() {
         }
     });
 }
+
