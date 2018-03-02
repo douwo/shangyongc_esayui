@@ -1,0 +1,429 @@
+/* easyui布局样式修改 */
+
+html,
+body,
+p {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+.panel-title {
+	/*修改侧边一级文字颜色*/
+	color: #fff;
+	font-weight: 200;
+}
+
+.panel-body,
+.panel-body-noheader {
+	border-width: 0;
+}
+
+.accordion .accordion-header {
+	/*修改侧边一级背景透明*/
+	background: rgba(238, 238, 238, 0.096);
+}
+
+.easyui-accordion>div {
+	/*侧边一级下面框*/
+	border-bottom: 1px solid rgba(222, 212, 212, 0.37);
+}
+
+.easyui-accordion>div:last-child {
+	/*最后一个清除样式*/
+	border-bottom: none
+}
+
+.layout-panel-west {
+	/* background-color: #393D49; */
+	background: url('../img/left-bg2.jpg');
+	background-size: 165% 165%
+	/*background-size: 100% 100%*/
+	/*侧边全局背景色*/
+}
+
+.layout-panel-west .panel-header {
+	/*侧面一级标题样式重置*/
+	padding: 10px 10px;
+	border-bottom: none;
+	overflow: auto;
+}
+
+.layout-panel-west .panel-body {
+	/*侧边一级内容样式重置*/
+	border: none;
+	background: transparent;
+}
+
+.layout-panel-west .panel-body .panel-tool {
+	/*侧边下拉按钮位置*/
+	right: 10px;
+}
+
+.accordion .accordion-header-selected {
+	/*侧面一级选中背景*/
+	background-color: rgb(19, 138, 86);
+}
+
+.layout-panel-west .easyui-accordion {
+	/*侧面一、二级背景透明*/
+	background-color: transparent;
+}
+
+.layout-panel-west .easyui-accordion .funItem {
+	/*侧边二级文字内容样式*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	transition: all 0.3s ease-in;
+	width: 100%;
+	margin: 1px 0;
+	padding-top: 4px;
+	padding-left: 20px;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 14px;
+	color: #ccc;
+}
+
+.layout-panel-west .easyui-accordion .funItem:hover {
+	/*侧边二级悬浮样式*/
+	/*background: rgba(89, 163, 131,0.8);*/
+	background: linear-gradient(to bottom, rgba(89, 163, 131, 0.9), rgba(89, 163, 131, 0.7));
+	color: #fff;
+	width: 80% !important;
+	transform: translateX(20px);
+}
+
+.layout-panel-west .easyui-accordion .funItem.select {
+	/*侧边二级选中样式 通过JS添加此类*/
+	color: #fff !important;
+	background: linear-gradient(to bottom, rgba(89, 163, 131, 0.9), rgba(89, 163, 131, 0.7));
+	/*background: rgb(89, 163, 131) !important;*/
+	width: 100%;
+}
+
+.layout-panel-west .accordion-header {
+	/*侧边一级导航*/
+	transition: all 0.3s;
+	border-left: 10px transparent solid;
+}
+
+
+/**
+ *  用户自定义样式 start 
+ * */
+
+
+/* a标签样式默认值修改 */
+
+a {
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+a:link {
+	color: rgb(82, 147, 197);
+}
+
+a:visited {
+	color: rgb(133, 192, 240);
+}
+
+a:hover {
+	color: rgb(133, 192, 240);
+}
+
+a:active {
+	color: rgb(82, 147, 197)
+}
+
+
+/*输入框提示文字颜色*/
+
+input:-moz-placeholder {
+	color: #999;
+}
+
+input:-ms-input-placeholder {
+	color: #999;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
+/*标签页下窗口背景*/
+
+.MainPageBg {
+	/*background: url(../img/ifream-bg4.jpg) top;*/
+	background-size: 100% 100%;
+}
+
+
+/*进度条提示start*/
+.jdt {
+	display: flex;
+	/*box-shadow:  0 0 20px 0 rgba(255,255,255,0.5);*/
+	/*background: rgba(225,225,225,0.2);*/
+	background: linear-gradient(to top, rgba(225, 225, 225, 0.2), rgba(225, 225, 225, 1));
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+.circleProgress_wrapper {
+	/*进度条每一项*/
+	width: 150px;
+	height: 150px;
+	margin: 50px auto;
+	position: relative;
+	left: -6vw;
+	/*border: 1px solid #ddd;*/
+}
+
+.bg-white {
+	/*底部空白区域*/
+	width: 380px;
+	margin-top: 15px;
+	height: 120px;
+	/*background: white;*/
+	background: linear-gradient(rgba(255, 255, 255, 0.8) 20%, rgba(198, 198, 198, 1));
+	border-radius: 100px;
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.3);
+	transition: all 0.5s ease-out;
+}
+
+.bg-white:hover {
+	box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.6);
+}
+
+
+/*进度条中的文字*/
+
+.bg-white>div:nth-child(1) {
+	text-align: center;
+	padding-top: 45px;
+	z-index: 1;
+	font-size: 22px;
+	line-height: 20px;
+	display: inline-block;
+	position: relative;
+	left: 55px;
+	color: #555;
+}
+
+.orange .bg-white>div>p:nth-child(1) {
+	color: #F67029;
+	font-weight: bold;
+}
+
+.red .bg-white>div>p:nth-child(1) {
+	color: #E72A26;
+	font-weight: bold;
+}
+
+.blue .bg-white>div>p:nth-child(1) {
+	color: #0AA1EA;
+	font-weight: bold;
+}
+
+.bg-white>div:nth-child(1)>p:nth-child(2) {
+	font-size: 14px;
+	margin-top: 5px;
+	margin-left: -8px;
+}
+
+
+/*白色背景中的文字*/
+
+.bg-white>div:nth-child(2) {
+	float: right;
+	width: 70%;
+	text-align: center;
+	position: relative;
+	top: 25px;
+	font-size: 36px;
+}
+
+.bg-white-text {
+	font-size: 18px;
+	color: #333;
+}
+
+.orange .bg-white>div:nth-child(1) {
+	/*第一个进度条中的文字*/
+	left: 45px;
+}
+
+.wrapper {
+	width: 75px;
+	height: 150px;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}
+
+.right {
+	right: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.circleProgress {
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	-webkit-transform: rotate(45deg);
+}
+
+
+/*不同颜色的进度条*/
+
+.orange .circleProgress {
+	border: 20px solid #F67029;
+}
+
+.orange .rightcircle {
+	border-top: 20px solid #C4C2C3;
+	border-right: 20px solid #C4C2C3;
+	right: 0;
+	/*-webkit-animation: circleProgressLoad_right 5s linear infinite;*/
+	/*-webkit-transform: rotate(45deg);*/
+}
+
+.orange .leftcircle {
+	border-bottom: 20px solid #C4C2C3;
+	border-left: 20px solid #C4C2C3;
+	left: 0;
+	/*-webkit-animation: circleProgressLoad_left 5s linear infinite;*/
+	-webkit-transform: rotate(180deg);
+}
+
+.red .circleProgress {
+	border: 20px solid #E72A26;
+}
+
+.red .rightcircle {
+	border-top: 20px solid #C4C2C3;
+	border-right: 20px solid #C4C2C3;
+	right: 0;
+}
+
+.red .leftcircle {
+	border-bottom: 20px solid #C4C2C3;
+	border-left: 20px solid #C4C2C3;
+	left: 0;
+	-webkit-transform: rotate(180deg);
+}
+
+.blue .circleProgress {
+	border: 20px solid #0AA1EA;
+}
+
+.blue .rightcircle {
+	border-top: 20px solid #C4C2C3;
+	border-right: 20px solid #C4C2C3;
+	right: 0;
+}
+
+.blue .leftcircle {
+	border-bottom: 20px solid #C4C2C3;
+	border-left: 20px solid #C4C2C3;
+	left: 0;
+	-webkit-transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 1500px) {
+	.bg-white>div:nth-child(2) {
+		width: 35%;
+		right: 3vw;
+	}
+	.bg-white {
+		width: 300px;
+	}
+}
+
+@media only screen and (max-width: 1225px) {
+	.wrapper {
+		width: 65px;
+		height: 130px;
+		position: absolute;
+		top: 0;
+		overflow: hidden;
+	}
+	.circleProgress {
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		position: absolute;
+		top: 0;
+		-webkit-transform: rotate(45deg);
+	}
+	.circleProgress_wrapper {
+		/*进度条每一项*/
+		width: 130px;
+		height: 130px;
+		margin: 50px auto;
+		position: relative;
+		left: -6vw;
+		/*border: 1px solid #ddd;*/
+	}
+	.bg-white {
+		/*底部空白区域*/
+		width: 240px !important;
+		margin-top: 15px;
+		height: 100px;
+		/*background: white;*/
+		background: linear-gradient(rgba(255, 255, 255, 0.8) 20%, rgba(198, 198, 198, 1));
+		border-radius: 100px;
+		box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.3);
+		transition: all 0.5s ease-out;
+	}
+	.bg-white>div:nth-child(1) {
+		text-align: center;
+		padding-top: 30px;
+		z-index: 1;
+		font-size: 18px;
+		line-height: 20px;
+		display: inline-block;
+		position: relative;
+		left: 50px;
+		color: #555;
+	}
+	.bg-white>div:nth-child(2) {
+		width: 25%;
+		right: -1.5vw;
+	}
+	.orange .bg-white>div:nth-child(1) {
+		/*第一个进度条中的文字*/
+		left: 40px;
+	}
+	.bg-white {
+		width: 300px;
+	}
+	/*白色背景中的文字*/
+	.bg-white>div:nth-child(2) {
+		float: right;
+		width: 70%;
+		text-align: center;
+		position: relative;
+		top: 20px;
+		font-size: 28px;
+	}
+	.bg-white-text {
+		font-size: 16px;
+		color: #333;
+	}
+}
+
+.Mychart01-bg {
+	background: rgba(255, 255, 255, 0.3);
+	margin-top: 20px;
+	height: 52vh;
+	border-radius: 10px;
+}

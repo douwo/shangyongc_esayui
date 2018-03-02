@@ -1,0 +1,249 @@
+body,
+html {
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	position: absolute;
+	top: 0;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	-webkit-text-fill-color: #333 !important;
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+	background-color: transparent;
+	background-image: none;
+	transition: background-color 50000s ease-in-out 0s; //背景色透明  生效时长  过渡效果  启用时延迟的时间 
+}
+
+.animated {
+	animation-duration: 1s !important;
+}
+.input-text {
+	margin-top: -1px;
+	border: 1px solid #ccc;
+	height: 38px;
+	line-height: 38px;
+	background-color: #fff;
+}
+
+.login-input-icon {
+	background: #9f9f9f;
+	padding: 12px 11px;
+	position: relative;
+	top: -1px;
+	border: none;
+	left: -1px;
+}
+
+.input-text>span:first-child {
+	/*margin: 0 10px 0px 15px;*/
+	color: #fff;
+	font-weight: 400;
+}
+
+
+/*.line {
+	position: relative;
+	top: -2px;
+	vertical-align: middle;
+	display: inline-block;
+	height: 28px;
+	width: 1px;
+	background: #4382B7;
+	box-shadow: 0 1px 1px 0 #4382B7;
+}*/
+
+.input-text {
+	transition: 0.5s all;
+	/*box-shadow: 0 0 1px #eee;*/
+}
+
+.input-text>input {
+	padding-left: 5px;
+	width: 180px;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	line-height: 25px;
+	background: transparent;
+	transition: 1s all;
+	color: #333;
+}
+
+input::-webkit-input-placeholder {
+	color: #000;
+	opacity: 0.3;
+	transition: 0.5s all;
+	position: relative;
+	left: 0;
+}
+
+.input-text>input:focus::-webkit-input-placeholder {
+	color: #0081C2;
+	opacity: 1;
+}
+
+.err-hint {
+	line-height: 30px;
+	text-align: center;
+	color: indianred;
+	font-size: 14px;
+	background: rgba(225, 225, 225, 1);
+}
+
+.verification {
+	/*验证码输入框*/
+	width: 150px;
+}
+
+#parallax {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#parallax>img {
+	position: absolute;
+	width: 125%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.input-body {
+	margin: 0 auto;
+	margin-top: 18%;
+	width: 260px;
+	height: 250px;
+	padding: 20px 80px;
+	padding-top: 10px;
+	background-color: rgba(22, 22, 22, 0.4);
+	transition: all 1s;
+}
+
+.input-body>div {
+	margin: 5px 0;
+}
+
+.users-bottom-copy {
+	position: absolute;
+	bottom: 15px;
+	/*bottom: 0;*/
+	width: 100%;
+	text-align: center;
+	color: deepskyblue;	
+	transition: all 1s;
+	/*background: rgba(0, 0, 0, 0.2);*/
+	line-height: 40px;
+}
+.system-name{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.system-title{
+	position: absolute;
+	top: 5px;
+	left: 20px;
+	display: flex;
+	align-items: center;
+	color: rgb(0, 160, 234);
+}
+.loginBtn {
+	width: 260px;
+	height: 38px;
+	background: rgba(13, 111, 184, 1.0);
+	/*border-radius: 5px;*/
+	border: none;
+	outline: none;
+	font-size: 18px;
+	color: #eee;
+	transition: 0.4s all;
+	cursor: pointer;
+}
+
+.loginBtn:hover {
+	background: rgba(23, 131, 214, 1);
+}
+
+.loginBtn:active {
+	background: rgba(13, 111, 184, 1);
+}
+
+@media only screen and (max-height: 660px) {
+	.input-body {
+		margin-top: 16%;
+	}
+	#user-title {
+		top: 50px;
+	}
+}
+
+.users-login-pages {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 111;
+}
+
+.users-login-pages-start {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.users-login-pages-start>div {
+	width: 300px;
+	text-align: center;
+	font-size: 120px;
+	color: white;
+	line-height: 40px;
+	font-weight: 800;
+}
+
+.users-login-pages-btn>button {
+	width: 110px;
+	height: 110px;
+	background: rgba(125,125,125,.9);
+	/*border-radius: 5px;*/
+	border: none;
+	outline: none;
+	font-weight: bold;
+	font-size: 18px;
+	color: #eee;
+	transition: 1s all;
+	cursor: pointer;
+	border-radius: 100%;
+	/*box-shadow: 0 0 20px 0 rgba(13, 111, 184, 1.0);*/
+}
+
+.users-login-pages-btn>button:hover {
+	background: rgba(0, 160, 234,0.9);
+	transform: scale(1.1);
+	animation: 1s start alternate;
+	animation-iteration-count:infinite;
+}
+@keyframes start{
+	from{
+		transform: scale(1);
+		box-shadow:0 0 5px 0 rgba(0, 160, 234, 0.5);
+	}
+	to{
+		transform: scale(1.2);
+		box-shadow:0 0 30px 0 rgba(0, 160, 234,1 );
+	}
+}
