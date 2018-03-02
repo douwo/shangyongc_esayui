@@ -132,7 +132,9 @@ body {
 	color: #fff;
 }
 .datagrid-header-inner{
+	/*表格头部宽度继承父元素*/
 	background: transparent;
+	width: inherit;
 }
 .datagrid-cell-rownumber{
 	/*数字id*/
@@ -164,7 +166,11 @@ body {
 
 .datagrid-htable{
 	/*单元格字体颜色*/
+	width: inherit;
 	color: #eee;
+}
+.datagrid-btable{
+	width: inherit;
 }
 .datagrid-btable tr:nth-child(2n){
 	background: rgba(0,0,0,0.2);
