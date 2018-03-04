@@ -1,9 +1,0 @@
-.datagrid-header-row a:link {color: blue; text-decoration:none;} //未访问：蓝色、无下划线 
-.datagrid-header-row a:active:{color: red; } //激活：红色 
-.datagrid-header-row a:visited {color:purple;text-decoration:none;} //已访问：purple、无下划线 
-.datagrid-header-row a:hover {color: red; text-decoration:underline;} //鼠标移近：红色、下划线 
-.easyui-linkbutton{margin-right:5px}
-/* 鼠标经过排序列头变为手势 */
-.datagrid-sort:hover{
-cursor:pointer;
-}

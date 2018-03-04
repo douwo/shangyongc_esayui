@@ -1,0 +1,29 @@
+<table id="carTable" class="easyui-datagrid" style="width: 100%; height: 100%;" data-options="url:'/gs/carInfo/carInfoList',rownumbers:'true',pageSize:20,rownumberWidth:50,pagination:true,singleSelect:true,
+			border:false,fitColumns:true,toolbar:'#carInforTb',emptyMsg:'暂无记录',loadMsg:'正在加载，请稍后。。。'">
+	<thead>
+		<tr>
+			<th data-options="field:'document_no'" width="100">档案号</th>
+			<th data-options="field:'co_name'" width="100">所属公司</th>
+			<th data-options="field:'owner',formatter:getOwnerName" width="100">车主姓名</th>
+			<th data-options="field:'car_no'" width="100">车牌号</th>
+			<th data-options="field:'car_type'" width="100">类型</th>
+			<th data-options="field:'salesman'" width="100">业务员</th>
+			<th data-options="field:'date'" width="100">创建时间</th>
+		</tr>
+	</thead>
+</table>
+<div id="carInforTb">
+	<div style="padding: 10px 10px 10px 10px;">
+		<label class="js-col">车牌号： <input
+			class="easyui-textbox " type="text" id="car_no_list" name="car_no" maxlength="20"
+			data-options="prompt:'请输入车牌号'"></input>
+		</label>
+		<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="searchCarNoList($('#carTable'),$('#car_no_list'))">搜&nbsp;索&nbsp;</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-clear'" onclick="resetForm($('#car_no_list'),$('#carTable'))">重&nbsp;置</a>
+	</div>
+</div>
+<script type="text/javascript">
+	$("#carTable").datagrid({
+        data: [{ "id": 1519724251397, "date": "2018-02-27 17:37:31", "document_no": "", "co_id": "1516963978923", "co_name": "万泽", "owner_id": null, "affiliate_co_id": null, "affiliate_co_name": null, "car_no": "C3241", "car_type": "", "model": "", "container_length": 0, "vin": "", "d_validity_time": null, "t_validity_time": null, "tonnage": 0, "car_status": "", "seat": 0, "disuse_time": null, "disuse": "", "dmv_status": "", "dmv": "", "tms": null, "tms_status": "", "is_attention": null, "salesman": "", "salesman_working_time": null, "owner": { "id": null, "name": "", "phone": "", "idcard": "", "addr": "", "type": "" }, "carInsurance": null, "carFee": null, "carCase": null }, { "id": 1519724184799, "date": "2018-02-27 17:36:24", "document_no": "", "co_id": "1516963978923", "co_name": "万泽", "owner_id": null, "affiliate_co_id": null, "affiliate_co_name": null, "car_no": "B1231", "car_type": "", "model": "", "container_length": 0, "vin": "", "d_validity_time": null, "t_validity_time": null, "tonnage": 0, "car_status": "", "seat": 0, "disuse_time": null, "disuse": "", "dmv_status": "", "dmv": "", "tms": null, "tms_status": "", "is_attention": null, "salesman": "", "salesman_working_time": null, "owner": { "id": null, "name": "", "phone": "", "idcard": "", "addr": "", "type": "" }, "carInsurance": null, "carFee": null, "carCase": null }, { "id": 1519724101220, "date": "2018-02-27 17:35:01", "document_no": "", "co_id": "1516963978923", "co_name": "万泽", "owner_id": null, "affiliate_co_id": null, "affiliate_co_name": null, "car_no": "A43242", "car_type": "", "model": "", "container_length": 0, "vin": "", "d_validity_time": null, "t_validity_time": null, "tonnage": 0, "car_status": "", "seat": 0, "disuse_time": null, "disuse": "", "dmv_status": "", "dmv": "", "tms": null, "tms_status": "", "is_attention": null, "salesman": "", "salesman_working_time": null, "owner": { "id": null, "name": "", "phone": "", "idcard": "", "addr": "", "type": "" }, "carInsurance": null, "carFee": null, "carCase": null }, { "id": 1519630059729, "date": "2018-02-26 15:27:39", "document_no": "", "co_id": "1516963978923", "co_name": "万泽", "owner_id": null, "affiliate_co_id": null, "affiliate_co_name": null, "car_no": "测A55669", "car_type": "", "model": "", "container_length": 0, "vin": "", "d_validity_time": null, "t_validity_time": null, "tonnage": 0, "car_status": "", "seat": 0, "disuse_time": null, "disuse": "", "dmv_status": "", "dmv": "", "tms": null, "tms_status": "", "is_attention": null, "salesman": "", "salesman_working_time": null, "owner": { "id": null, "name": "", "phone": "", "idcard": "", "addr": "", "type": "" }, "carInsurance": null, "carFee": null, "carCase": null }, { "id": 1519627720838, "date": "2018-02-26 14:48:40", "document_no": "", "co_id": "1516963978923", "co_name": "万泽", "owner_id": null, "affiliate_co_id": null, "affiliate_co_name": null, "car_no": "测A11223", "car_type": "", "model": "", "container_length": 0, "vin": "", "d_validity_time": null, "t_validity_time": null, "tonnage": 0, "car_status": "", "seat": 0, "disuse_time": null, "disuse": "", "dmv_status": "", "dmv": "", "tms": null, "tms_status": "", "is_attention": null, "salesman": "", "salesman_working_time": null, "owner": { "id": null, "name": "", "phone": "", "idcard": "", "addr": "", "type": "" }, "carInsurance": null, "carFee": null, "carCase": null }]
+    });
+</script>

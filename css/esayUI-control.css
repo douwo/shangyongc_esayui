@@ -1,0 +1,299 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	height: 100%;
+}
+
+/* easyui统一样式改变 */
+
+/* 选项卡样式 start */
+.tabs {
+	/*选项卡区域底部边框*/
+	/*border-bottom: 1px solid rgba(83, 166, 226, 0.4);*/
+	border-bottom: 0;
+	/*box-shadow: 0 2px 5px 0 #333;*/
+}
+
+.usersTable .tabs-header {
+	/* 选项卡区域背景 */
+	/*background: rgb(245, 245, 245);*/
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.usersTable .panel-body {
+	/* tab选项卡打开窗口内容清除滚动条 */
+	overflow-x: hidden;
+}
+
+.usersTable .tabs li a.tabs-close {
+	/*关闭按钮*/
+	/*background: url(images/tabs_icons.png) no-repeat -34px center;*/
+	transition: all 0.5s !important;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 100%;
+}
+
+.tabs-p-tool a:hover,
+.tabs li a:hover.tabs-close,
+.tabs-scroller-over {
+	background-color: #eee;
+}
+
+.usersTable .tabs li a.tabs-inner {
+	/*固定选项卡高度*/
+	/*width: 50px;*/
+	width: 100px;
+	height: 37px !important;
+}
+
+.usersTable .tabs li a.tabs-inner>.tabs-title {
+	/*选项卡文字*/
+	font-size: 14px;
+}
+
+.usersTable .tabs li a:nth-child(1) {
+	/*设置tab选项卡默认样式*/
+	color: #eee;
+	border: none;
+	background: linear-gradient(rgba(83, 166, 226, 0.6), rgba(10, 111, 183, 0.8));
+}
+
+.usersTable .tabs li.tabs-selected a:nth-child(1) {
+	/*设置tab选项卡选中时默认样式*/
+	background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
+	border: none;
+	color: #eee;
+}
+
+.usersTable .tabs li a.tabs-inner:hover {
+	/*设置tab选项卡悬浮样式*/
+	background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
+	border: none;
+}
+
+/* 选项卡样式 end */
+#funTab .panel-body.panel-body-noheader.panel-body-noborder{
+	/*所有子界面背景*/
+	background: url(../img/ifream-bg4.jpg) top;
+	background-size: 100% 100%;
+}
+.easyui-linkbutton{
+	/*按钮颜色*/
+	box-sizing: border-box;
+	width: auto;
+	color: #eee;
+	padding: 3px 10px;
+	transition: all 0.2s;
+	background: rgba(75, 132, 255, 0.6);
+	box-shadow: 0 0 5px 2px #eee inset;
+	border: 0;
+}
+.easyui-linkbutton:hover{
+	width: auto;
+	color: #fff;
+	/*padding: 3px 18px;*/
+	background: ;
+	border: 0;
+}
+
+/* .datagrid-toolbar .l-btn-plain:hover{
+	border:none;
+} */
+
+.input-style{
+	/*自定义文本输入框样式*/
+	width: 120px;
+	padding-left: 10px;
+	transition: all 0.3s;
+	border-radius: 6px;
+}
+.input-style:focus{
+	width: 160px;
+	outline: none;
+	box-shadow: 0 0px 6px 0px #ccc;
+}
+
+.datagrid-wrap{
+	/*表格背景透明*/
+	background: transparent;
+	color: #fff;
+}
+.datagrid-header,
+.datagrid-header-row{
+	/*表头样式*/
+	height: 34px !important;
+	border: none;
+	background: transparent;
+	border-bottom: 1px solid #eee;
+}
+.datagrid-header .datagrid-cell{
+	color: #fff;
+}
+.datagrid-header-inner{
+	/*表格头部宽度继承父元素*/
+	background: transparent;
+	width: inherit;
+}
+.datagrid-cell-rownumber{
+	/*数字id*/
+	color: #eee;
+}
+.datagrid-cell-rownumber:hover{
+	font-weight: bold;
+	font-size: 14px;
+}
+.datagrid-header td, .datagrid-body td, .datagrid-footer td{
+	/*单元格样式*/
+	background: rgba(0,0,0,0.2);
+	height: 30px;
+	color: #eee;
+	border-color: #fff;
+	border-width: 0 1px 1px 0;
+	border-color: transparent;
+}
+.datagrid-header td{
+	transition: all 0.8s;
+}
+.datagrid-header td:hover, .datagrid-body td:hover, .datagrid-footer td:hover{
+	font-weight: bold;
+}
+.datagrid-header td:hover{
+	color: #fff;
+	font-weight: bold;
+}
+
+.datagrid-htable{
+	/*单元格字体颜色*/
+	width: inherit;
+	color: #eee;
+}
+.datagrid-btable{
+	width: inherit;
+}
+.datagrid-btable tr:nth-child(2n){
+	background: rgba(0,0,0,0.2);
+}
+.datagrid-row-over{
+	/*background: rgba(75, 132, 255, 0.5);*/
+	background: linear-gradient(rgba(225,225,245, 0.4),rgba(225,225,245,0.2)) !important;
+	color: #fff;
+}
+.datagrid-row-selected{
+	color: #fff;
+	background: linear-gradient(rgba(225,225,245, 0.4),rgba(225,225,245,0.2)) !important;
+	outline: none;
+	font-weight: bold;
+}
+.datagrid-header-over{
+	background: linear-gradient(rgba(225,225,245, 0.4),rgba(225,225,245,0.2)) !important;
+	color: #fff;
+}
+.datagrid-toolbar{
+	/*顶部工具栏*/
+	background: transparent;
+	border: none;
+}
+.datagrid-pager.pagination{
+	/*底部分页栏*/
+	border: none;
+	background: rgba(25,25,25,0.4);
+}
+/* date-select */
+.calendar-saturday,
+.calendar-sunday{
+	color: rgba(93, 23, 206, 0.438);
+}
+
+.calendar-selected{
+	border: 0;
+	background-color: rgb(143, 186, 251);
+	border-radius: 50%;
+	color: #eee;
+	font-weight: bold;
+}
+
+.calendar-nav-hover{
+	border-radius: 50%;border: 0;
+}
+
+.datebox{
+	line-height: 30px;
+}
+.datebox-button a{
+	color: rgb(88, 88, 158);
+}
+
+
+/* easyui-combobox */
+.textbox,
+.textbox-addon-right>a,
+.textbox>input{
+	height: 28px !important;
+}
+.combobox-item-hover{
+	background: rgba(75, 132, 255, 0.5);
+	color: #fff;
+}
+.combobox-item-selected{
+	background: rgba(75, 132, 255, 0.8);
+}
+
+/* esayui-check */
+/*.iradio_minimal-red + span{
+	position: relative;
+	top: 2px;
+	left: 2px;
+}*/
+
+/* easyui-dialog */
+.window{
+	background: rgba(75, 132, 255, 0.5);
+	box-shadow: 0 0 20px 0 #999;
+	border: none;
+	border-radius: 0px;
+	padding: 5px 0;
+}
+.window-header>.panel-title{
+	position: relative;
+	color: #fff;
+	left: 5px;
+}
+.window-header .panel-tool a{
+	position: relative;
+	right: 5px;
+	margin-left: 5px;
+	border-radius: 50%;
+	background-color: rgba(255,255,255,0.5);
+}
+.window-proxy-mask, .window-mask{
+	background-color: rgba(0,0,0,0.5);
+}
+
+/* easyui-Messager */
+.messager-window {
+	background: rgba(75, 132, 255, 0.5);
+	border: none;
+	box-shadow: 0 0 20px 0 #999;
+	border-radius: 0px;
+	padding: 5px 0;
+}
+.window-proxy-mask,
+.window-mask {
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.window-shadow{
+	box-shadow: none;
+	border-radius: 0px;
+}
+.messager-window .l-btn.l-btn-small {
+	background: rgba(75, 132, 255, 0.6);
+	color: #eee;
+	outline: none;
+	border: none;
+	transition: box-shadow 0.2s;
+}
+.messager-window .l-btn.l-btn-small:hover {
+	background: rgba(198, 75, 255, 0.7);
+}

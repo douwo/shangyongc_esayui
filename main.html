@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<title>芸享商用车综合平台</title>
 		<meta charset="UTF-8" />
-		<!--<link rel="stylesheet" type="text/css" href="yx/main.css">-->
 		<link rel="stylesheet" type="text/css" href="eui/easyui.css">
 		<link rel="stylesheet" type="text/css" href="eui/icon.css">
-		<link rel="stylesheet" href="main-style.css">
-		<link rel="stylesheet" href="esayUI-control.css">
-		<link rel="stylesheet" href="main/css/font-awesome.min.css">
-		<script type="text/javascript" src="ref/easyui/jquery.min.js"></script>
-		<script type="text/javascript" src="ref/easyui/jquery.easyui.min.js"></script>
-		<script type="text/javascript" src="ref/easyui/easyui-lang-zh_CN.js"></script>
-		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="css/main-style.css">
+		<link rel="stylesheet" type="text/css" href="css/mainPage.css" />
+		<link rel="stylesheet" type="text/css" href="css/esayUI-control.css">
+		<script type="text/javascript" src="eui/jquery.min.js"></script>
+		<script type="text/javascript" src="eui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="eui/easyui-lang-zh_CN.js"></script>
+		<script src="javascript/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascript/mainPage.js"></script>
+		<script src="javascript/car.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body class="easyui-layout">
 		<div class="header" data-options="region:'north',border:false" style="padding-left: 10px;">
-			<img class="system-logo" src="img/logo.jpg" height="95%">
+			<img class="system-logo" src="img/logo.png" height="95%">
 			<div class="search-input">
-				<span class="fa fa-search fa-2x serch-Icon" style="color: #999;"></span>
+				<span class="fa fa-search fa-2x" style="color: #999;"></span>
 				<input type="text" placeholder="输入检索关键字" />
+				<button class="search-btn">检索</button>
 			</div>
-			<div class="header-right-btn" style="">
+			<div class="header-right-btn">
 				<a href="javascript:void(0)" class="users-icon " style="margin-right:20px;">
 					<span class="fa fa-plus-circle fa-2x" style=""></span>新增添加</a>
 				<a href="javascript:void(0)" id="sb1" class="users-icon">
 					<span class="fa fa-user fa-2x" class="users-name"></span> Admin
 				</a>
-				<span class="fa fa-power-off fa-2x login-out" style="" onclick="out()">
+				<p class="fa fa-power-off fa-2x login-out"></p>
 			</div>
 		</div>
 		<div class="" data-options="region:'west'" style="width: 238px;">
 			<div id="main_accordion" class="easyui-accordion left-nav" data-options="border:false" style="width: 238px;">
 				<div title="系统管理" data-options="iconCls:'icon-add'" style="overflow: auto;">
 					<!-- data-url="/gs/page/co/dpt" -->
-					<div class="funItem" onclick="addTab('部门管理','')">部门管理</div>
+					<div class="funItem" onclick="addTab('部门管理','carListPage.html')">部门管理</div>
 					<div class="funItem" onclick="addTab('员工管理','')">员工管理</div>
 					<div class="funItem" data-url="/gs/page/co/roleType">角色管理</div>
 					<div class="funItem" data-url="/gs/page/co/role">权限管理</div>
@@ -47,14 +49,71 @@
 				<div title="系统管理" data-options="iconCls:'icon-add'" style="overflow: auto;">
 					<div class="funItem">3</div>
 				</div>
-
 			</div>
 		</div>
 		<div class="users-bottom-copy" data-options="region:'south',border:false">研发单位：重庆芸享实业有限公司</div>
 		<div data-options="region:'center'">
 			<div id="funTab" class="easyui-tabs usersTable" data-options="border:false" style="width: 100%; height: 100%">
 				<div title="首页" class="MainPageBg" style="padding: 10px;">
-					<p style="text-align: center;">admin,欢迎回来!</p>
+					<div class="jdt">
+						<div class="circleProgress_wrapper orange">
+							<div class="wrapper right">
+								<div class="circleProgress rightcircle"></div>
+							</div>
+							<div class="wrapper left">
+								<div class="circleProgress leftcircle"></div>
+							</div>
+							<div class="bg-white">
+								<div>
+									<p>18%</p>
+									<p>资料完善度</p>
+								</div>
+								<div>
+									<p>4743</p>
+									<p class="bg-white-text">车辆总数</p>
+								</div>
+							</div>
+						</div>
+						<div class="circleProgress_wrapper red">
+							<div class="wrapper right">
+								<div class="circleProgress rightcircle"></div>
+							</div>
+							<div class="wrapper left">
+								<div class="circleProgress leftcircle"></div>
+							</div>
+							<div class="bg-white">
+								<div>
+									<p>18%</p>
+									<p>已处理</p>
+								</div>
+								<div>
+									<p>65</p>
+									<p class="bg-white-text">工作提醒</p>
+								</div>
+							</div>
+						</div>
+						<div class="circleProgress_wrapper blue">
+							<div class="wrapper right">
+								<div class="circleProgress rightcircle"></div>
+							</div>
+							<div class="wrapper left">
+								<div class="circleProgress leftcircle"></div>
+							</div>
+							<div class="bg-white">
+								<div>
+									<p>18%</p>
+									<p>已处理</p>
+								</div>
+								<div>
+									<p>35</p>
+									<p class="bg-white-text">待办工作</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="Mychart01-bg">
+						<div id="Mychart01" style="width: 100%;height:100%"></div>
+					</div>
 				</div>
 			</div>
 		</div>
