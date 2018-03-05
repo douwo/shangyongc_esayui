@@ -63,6 +63,7 @@ function showCarWindow(obj, url) {
 function getOwnerName(value,row,index){
 	return value.name;
 }
+
 function delCarWindow(obj, url){
 	var row = $(obj).datagrid('getSelected');
 	if (row == null) {

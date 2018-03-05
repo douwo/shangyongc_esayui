@@ -18,8 +18,7 @@ body {
 
 .usersTable .tabs-header {
 	/* 选项卡区域背景 */
-	/*background: rgb(245, 245, 245);*/
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .usersTable .panel-body {
@@ -29,10 +28,13 @@ body {
 
 .usersTable .tabs li a.tabs-close {
 	/*关闭按钮*/
-	/*background: url(images/tabs_icons.png) no-repeat -34px center;*/
-	transition: all 0.5s !important;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-position: -33px center;
+	transition: all 0.3s !important;
+	background-color: transparent;
 	border-radius: 100%;
+}
+.usersTable .tabs li a.tabs-close:hover{
+	background-color: rgba(222, 222, 222, 0.5);
 }
 
 .tabs-p-tool a:hover,
@@ -43,9 +45,7 @@ body {
 
 .usersTable .tabs li a.tabs-inner {
 	/*固定选项卡高度*/
-	/*width: 50px;*/
-	width: 100px;
-	height: 37px !important;
+	height: 36px !important;
 }
 
 .usersTable .tabs li a.tabs-inner>.tabs-title {
@@ -73,29 +73,48 @@ body {
 	border: none;
 }
 
-/* 选项卡样式 end */
+/* *
+ * 
+ * 选项卡样式 end 
+ * 
+ * */
+
 #funTab .panel-body.panel-body-noheader.panel-body-noborder{
 	/*所有子界面背景*/
 	background: url(../img/ifream-bg4.jpg) top;
 	background-size: 100% 100%;
 }
+
+/* 按钮样式 */
 .easyui-linkbutton{
 	/*按钮颜色*/
-	box-sizing: border-box;
 	width: auto;
-	color: #eee;
+	color: #eee !important;
 	padding: 3px 10px;
 	transition: all 0.2s;
-	background: rgba(75, 132, 255, 0.6);
-	box-shadow: 0 0 5px 2px #eee inset;
-	border: 0;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 1px;
+	outline: none;
 }
 .easyui-linkbutton:hover{
+	background-color: rgba(225,225,225,0.3);
 	width: auto;
-	color: #fff;
-	/*padding: 3px 18px;*/
-	background: ;
-	border: 0;
+	padding: 3px 14px;
+	border: 1px solid #fff;
+}
+.easyui-linkbutton:active{
+	box-shadow: none;
+	background-color: rgba(225,225,225,0.6);
+}
+/*工具栏底部刷新按钮*/
+.l-btn-plain{
+	border-color: transparent;
+	outline: none;
+}
+.l-btn-plain:hover{
+	background-color: rgba(0,0,0,0.8);
+	border-color: transparent;
 }
 
 /* .datagrid-toolbar .l-btn-plain:hover{
@@ -114,6 +133,15 @@ body {
 	outline: none;
 	box-shadow: 0 0px 6px 0px #ccc;
 }
+/* 文本输入框 */
+.textbox{
+	margin-right: 5px;
+	border-radius: 1px;
+}
+.textbox-focused{
+	transition: all 0.3s;
+	/*esayui自带输入框获取焦点时样式*/
+	box-shadow: 0 0 10px 0 deepskyblue}
 
 .datagrid-wrap{
 	/*表格背景透明*/
@@ -139,6 +167,7 @@ body {
 .datagrid-cell-rownumber{
 	/*数字id*/
 	color: #eee;
+	border-right: 1px solid #aaa;
 }
 .datagrid-cell-rownumber:hover{
 	font-weight: bold;
@@ -147,9 +176,8 @@ body {
 .datagrid-header td, .datagrid-body td, .datagrid-footer td{
 	/*单元格样式*/
 	background: rgba(0,0,0,0.2);
-	height: 30px;
+	height: 35px;
 	color: #eee;
-	border-color: #fff;
 	border-width: 0 1px 1px 0;
 	border-color: transparent;
 }
@@ -163,6 +191,9 @@ body {
 	color: #fff;
 	font-weight: bold;
 }
+.datagrid-cell,.datagrid-cell span{
+	font-size: 14px !important;
+}
 
 .datagrid-htable{
 	/*单元格字体颜色*/
@@ -173,6 +204,7 @@ body {
 	width: inherit;
 }
 .datagrid-btable tr:nth-child(2n){
+	/*斑马纹*/
 	background: rgba(0,0,0,0.2);
 }
 .datagrid-row-over{
@@ -184,7 +216,7 @@ body {
 	color: #fff;
 	background: linear-gradient(rgba(225,225,245, 0.4),rgba(225,225,245,0.2)) !important;
 	outline: none;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 .datagrid-header-over{
 	background: linear-gradient(rgba(225,225,245, 0.4),rgba(225,225,245,0.2)) !important;
@@ -199,6 +231,65 @@ body {
 	/*底部分页栏*/
 	border: none;
 	background: rgba(25,25,25,0.4);
+}
+.pagination-num{
+	/*底部分页栏跳转输入框*/
+	background-color: transparent;
+	color: #fff;
+	border: none !important;
+	border-bottom: 1px solid #fff !important;
+	outline: none;
+	text-align: center;
+	position: relative;
+	top: 2px;
+}
+.pagination-page-list{
+	/*分页条数选择*/
+	background-color: rgba(225,225,225,0.2);
+	border: none;
+	padding: 3px 5px;
+	position: relative;
+	top: -1px;
+	color: #eee;
+}
+.pagination-page-list>option{
+	background-color: rgba(0,0,0,.1);
+	color: #333;
+	height: 22px;
+	line-height: 22px;
+}
+/*表格内 操作按钮控制样式*/
+.users-btn-del,.users-btn-edit,.users-btn-more{
+	border: 1px solid transparent;
+	padding: 1px 5px;
+	font-weight: 100;
+}
+.users-btn-del{
+	color: indianred;
+}
+.users-btn-del:hover{
+	border-left: 1px solid indianred;
+	border-right: 1px solid indianred;
+	padding: 1px 5px;
+	font-weight: 100;
+}
+.users-btn-edit{
+	color: skyblue;
+}
+.users-btn-edit:hover{
+	border-left: 1px solid skyblue;
+	border-right: 1px solid skyblue;
+	padding: 1px 5px;
+	font-weight: 100;
+}
+.users-btn-more{
+	color: orange;
+}
+.users-btn-more:hover{
+	border-left: 1px solid orange;
+	border-right: 1px solid orange;
+	padding: 1px 5px;
+	font-weight: 100;
 }
 /* date-select */
 .calendar-saturday,
@@ -248,17 +339,26 @@ body {
 }*/
 
 /* easyui-dialog */
+.panel.window.panel-htop{
+	border-radius: 10px;
+}
+.panel.window.panel-htop .panel-icon{
+	margin-left: 5px;
+}
 .window{
-	background: rgba(75, 132, 255, 0.5);
-	box-shadow: 0 0 20px 0 #999;
+	/*background: rgba(75, 132, 255, 0.5);*/
+	background:url(../img/dialog-bg.jpg) no-repeat;
+	background-position: center;
+	background-size: cover;
+	box-shadow: 0 0 30px -3px #555;
 	border: none;
-	border-radius: 0px;
 	padding: 5px 0;
 }
 .window-header>.panel-title{
 	position: relative;
-	color: #fff;
+	color: #333;
 	left: 5px;
+	
 }
 .window-header .panel-tool a{
 	position: relative;
@@ -272,28 +372,40 @@ body {
 }
 
 /* easyui-Messager */
-.messager-window {
-	background: rgba(75, 132, 255, 0.5);
-	border: none;
-	box-shadow: 0 0 20px 0 #999;
-	border-radius: 0px;
-	padding: 5px 0;
-}
 .window-proxy-mask,
 .window-mask {
-	background-color: rgba(0, 0, 0, 0.5) !important;
+	/*model模式遮罩*/
+	background-color: rgba(0, 0, 0, 0.7) !important;
 }
 .window-shadow{
+	/*窗口阴影*/
+	/*visibility: hidden;*/
 	box-shadow: none;
-	border-radius: 0px;
+	border-radius: 10px;
+}
+.messager-button{
+	background: #fff;
+	text-align: right;
+	border: none;
+	border-top: 1px solid #ccc;
 }
 .messager-window .l-btn.l-btn-small {
-	background: rgba(75, 132, 255, 0.6);
-	color: #eee;
+	background: rgba(225,225,225,0.5);
+	box-shadow: 0 2px 5px -1px #999;
+	border: 1px solid #ccc;
+	border-radius: 0;
+	color: #333;
 	outline: none;
-	border: none;
-	transition: box-shadow 0.2s;
+	transition: all 0.5s;
 }
 .messager-window .l-btn.l-btn-small:hover {
-	background: rgba(198, 75, 255, 0.7);
+	animation: doudong 0.8s alternate ease;
+	background: rgba(205,205,205,0.8);
+	color: #555;
+	transform: rotateX(0deg);
+}
+@keyframes doudong{
+	0%{transform: translateY(0px);}
+	50%{transform: translateY(-5px);}
+	100%{transform: translateY(0px);}}
 }

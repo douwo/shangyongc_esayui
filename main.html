@@ -5,6 +5,7 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="eui/easyui.css">
 		<link rel="stylesheet" type="text/css" href="eui/icon.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="css/main-style.css">
 		<link rel="stylesheet" type="text/css" href="css/mainPage.css" />
@@ -27,15 +28,15 @@
 			</div>
 			<div class="header-right-btn">
 				<a href="javascript:void(0)" class="users-icon " style="margin-right:20px;">
-					<span class="fa fa-plus-circle fa-2x" style=""></span>新增添加</a>
+					<span class="fa fa-plus-circle fa-2x"></span>新增添加</a>
 				<a href="javascript:void(0)" id="sb1" class="users-icon">
 					<span class="fa fa-user fa-2x" class="users-name"></span> Admin
 				</a>
 				<p class="fa fa-power-off fa-2x login-out"></p>
 			</div>
 		</div>
-		<div class="" data-options="region:'west'" style="width: 238px;">
-			<div id="main_accordion" class="easyui-accordion left-nav" data-options="border:false" style="width: 238px;">
+		<div class="left-nav" data-options="region:'west'">
+			<div id="main_accordion" class="easyui-accordion" data-options="border:false">
 				<div title="系统管理" data-options="iconCls:'icon-add'" style="overflow: auto;">
 					<!-- data-url="/gs/page/co/dpt" -->
 					<div class="funItem" onclick="addTab('部门管理','carListPage.html')">部门管理</div>
