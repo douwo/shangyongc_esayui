@@ -1,0 +1,1204 @@
+<div class="container">
+	<div class="content">
+		<form id="iAddCar" method="post" enctype="multipart/form-data">
+			<div class="carBlock" style="width: 45%; height: auto; float: left;">
+				<div class="column">
+					<span class="current">车辆信息</span>
+				</div>
+				<div style="margin-bottom: 10px">
+					车辆：<input class="form-control" id="carSelect" name="carSelect" style="width: 200px; text-align: center;">
+				</div>
+				<div class="easyui-tabs addCarTab" style="width: 100%;" data-options="tabPosition:'top',height:620" id="cTable">
+					<input type="hidden" value="" id="carId" name="carId"> <input type="hidden" value="" id="co_name" name="co_name"> <input type="hidden" id="car_no" name="car_no">
+					<div class="tableDiv" title="基本信息" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">车牌号</td>
+									<td class="kv-content car_no">
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">文档编号</td>
+									<td class="kv-content"><input type="number" class="form-control" id="car_number" name="number"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车牌颜色</td>
+									<td class="kv-content">
+										<select class="form-control" id="vehicle_colour" name="vehicle_colour">
+											<option selected="selected" value="">请选择</option>
+											<option value="黄色">黄</option>
+											<option value="蓝色">蓝</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">使用性质</td>
+									<td class="kv-content"><input type="text" class="form-control" id="use_nature" name="use_nature" name="use_nature"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">发动机号码</td>
+									<td class="kv-content"><input type="text" class="form-control" id="engine_no" name="engine_no" data-options="validType:'isNumber'"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车架号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="vin" name="vin" data-options="validType:'isNumber'"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">厂牌型号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="model" name="model"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车主关系</td>
+									<td class="kv-content"><input type="text" class="form-control width400" id="car_t_type" name="car_t_type"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆挂靠合同图片</td>
+									<td class="kv-content"><input type="button" onclick="javascript:changeUploadObj('affiliated_contract_file');$('#upPicBtn').show();$('#cancelPicBtn').hide();$('#uploadWin').dialog('open');" value="选择图片"><input type="hidden" class="form-control" id="affiliated_contract_file" name="affiliated_contract_file">
+										<a id="affiliated_contract_file_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">核定载客人数</td>
+									<td class="kv-content"><input type="text" class="form-control" id="seats" name="seats" data-options="validType:'integer'"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆类型</td>
+									<td class="kv-content"><input id="vehicle_type" type="text" name="vehicle_type"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆图片</td>
+									<td class="kv-content"><input type="file" class="form-control" id="car_appear_pic" name="car_appear_pic_file">
+										<a id="car_appear_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="tableDiv" title="从业人员" style="padding: 10px">
+						<table id="emTable" class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">从业人员:</td>
+									<td class="kv-content"><input type="text" class="form-control bindingEm" id="" name="employees">
+									</td>
+									<td class="kv-label">
+										<a href="javascript:void(0)" onclick="addNewEm(this)">新增</a>
+										<a href="javascript:void(0)" onclick="removeNewEm(this)">删除</a>
+										<a href="javascript:void(0)" onclick="showThisEm(this)">查看</a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div title="道路运输证" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">登记时间</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="registration_time" name="registration_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">道路运输证发证时间</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="t_early_date" name="t_early_date"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">年审有效期至</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="annual_audit_time" name="annual_audit_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">运输证有效期至</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="t_validity" name="t_validity"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆登记证</td>
+									<td class="kv-content">
+										<input type="button" onclick="javascript:changeUploadObj('car_pic');$('#upPicBtn').show();$('#cancelPicBtn').hide();$('#uploadWin').dialog('open');" value="选择图片">
+										<input type="hidden" class="form-control" id="car_pic" name="car_pic">
+										<!-- <input type="file"
+											class="form-control" id="car_pic" name="car_pic_file"> -->
+										<a id="car_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">道路运输证号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="t_no" name="t_no"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">道路运输证</td>
+									<td class="kv-content"><input type="file" class="form-control" id="t_pic" name="t_pic_file">
+										<a id="t_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="保险" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">交强险保单号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="traffic_insure_number" name="traffic_insure_number"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">交强险起保日期</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="traffic_start_time" name="traffic_start_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">交强险止保日期</td>
+									<td class="kv-content"><input type="text" class="easyui-datebox" id="traffic_end_time" editable="false" name="traffic_end_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">交强险信息附件:</td>
+									<td class="kv-content"><input type="file" class="form-control" id="traffic_pic" name="traffic_pic_file">
+										<a id="traffic_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">商业险保单号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="commercial_insure_number" name="commercial_insure_number"></td>
+								</tr>
+								<tr>
+
+									<td class="kv-label">商业险起保日期</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="commercial_start_time" name="commercial_start_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">商业险止保日期</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="commercial_end_time" name="commercial_end_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">商业险信息附件</td>
+									<td class="kv-content"><input type="file" class="form-control" id="commercial_pic" name="commercial_pic_file">
+										<a id="commercial_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">第三责任险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="third_insurance_coverage" name="third_insurance_coverage"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车损险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="chesun_coverage" name="chesun_coverage"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">乘坐险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="ride_coverage" name="ride_coverage"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">不计赔险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="regardless_coverage" name="regardless_coverage"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">全车盗抢险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="robbing" name="robbing"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">自燃损失险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="catacausis_insurance" name="catacausis_insurance"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车上货物责任险保额（万）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="cargo_liability" name="cargo_liability"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="车辆参数" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">限速</td>
+									<td class="kv-content"><input type="text" class="form-control" id="speed_limit" name="speed_limit"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆尺寸长（毫米）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="length" name="length"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆尺寸宽（毫米）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="wide" name="wide"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆尺寸高（毫米）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="high" name="high"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">制造商名称</td>
+									<td class="kv-content"><input type="text" class="form-control" id="maker_name" name="maker_name"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">总质量（千克）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="totalMass" name="totalMass" autocomplete="off"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">核定载质量（千克）</td>
+									<td class="kv-content"><input type="text" class="form-control" id="quality" name="quality"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">排量</td>
+									<td class="kv-content"><input type="text" class="form-control" id="displacement" name="displacement"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">功率</td>
+									<td class="kv-content"><input type="text" class="form-control" id="power" name="power"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">车辆技术等级</td>
+									<td class="kv-content"><input type="text" class="form-control" id="technical_grade" name="technical_grade"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">技术等级评定时间</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="technical_grade_eval_time" name="technical_grade_eval_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">技术等级评定结果</td>
+									<td class="kv-content"><input type="text" class="form-control" id="technical_grade_eval_result" name="technical_grade_eval_result"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="行驶证" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">行驶证编号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="l_no" name="l_no"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">行驶证图片</td>
+									<td class="kv-content"><input type="file" class="form-control" id="l_pic" name="l_pic_file">
+										<a id="l_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">注册日期</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="l_early_date" name="l_early_date"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">有效期至</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="l_valid_for_time" name="l_valid_for_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">强制报废日期</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="l_validity" name="l_validity"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="保养" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">最近二级维护日期</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="fm_time" name="fm_time"></td>
+								</tr>
+								<!-- <tr>
+										<td class="kv-label">第二次二级维护日期</td>
+										<td class="kv-content"><input type="text" editable="false"
+											class="easyui-datebox" id="t_fm_time" name="t_fm_time" ></td>
+									</tr> -->
+								<tr>
+									<td class="kv-label">二级维护合格证</td>
+									<td class="kv-content"><input type="file" class="form-control" id="fm_pic" name="fm_pic_file">
+										<a id="fm_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<!-- <tr>
+									<td class="kv-label">第三次二级维护日期</td>
+									<td class="kv-content"><input type="text" editable="false"
+										class="easyui-datebox" id="h_fm_time" name="h_fm_time" ></td>
+									</tr>
+									<tr>
+									<td class="kv-label">第四次二级维护日期</td>
+									<td class="kv-content"><input type="text" editable="false"
+										class="easyui-datebox" id="f_fm_time" name="f_fm_time" ></td>
+									</tr> -->
+								<tr>
+									<td class="kv-label">综合报告评级</td>
+									<td class="kv-content">
+										<select class="form-control" id="gradeSelect" name="grade">
+											<option selected="selected" value="">请选择</option>
+											<option value="1">优</option>
+											<option value="2">良</option>
+											<option value="3">合格</option>
+										</select>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div title="GPS安装和安全信息" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">gps安装情况</td>
+									<td class="kv-content">
+										<select class="form-control" id="gps_is_install" name="gps_is_install" required="true" missingMessage="请选择GPS安装情况">
+											<option selected="selected" value="">请选择</option>
+											<option value="有">有</option>
+											<option value="无">无</option>
+										</select>
+									</td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">GPS设备安装证明文件</td>
+									<td class="kv-content"><input type="file" class="form-control" id="gps_testify_pic" name="gps_testify_pic_file">
+										<a id="gps_testify_pic_a" href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">通讯卡卡号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="communication_card_no" name="communication_card_no"></td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">GPS运营商</td>
+									<td class="kv-content"><input type="text" class="form-control" id="gps_operator" name="gps_operator"></td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">GPS监控终端厂牌型号</td>
+									<td class="kv-content"><input type="text" class="form-control" id="gps_brand_model" name="gps_brand_model"></td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">GPS监控终端安装时间</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="gps_install_date" name="gps_install_date"></td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">GPS接入时间</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="gps_time" name="gps_time"></td>
+								</tr>
+								<tr class="hidTr">
+									<td class="kv-label">GPS有效期至</td>
+									<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="gps_validity" name="gps_validity"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">是否有三角木</td>
+									<td class="kv-content">
+										<select class="form-control" id="iscleat" name="iscleat">
+											<option selected="selected" value="">请选择</option>
+											<option value="无">无</option>
+											<option value="有">有</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">是否有灭火器</td>
+									<td class="kv-content">
+										<select class="form-control" id="isextinguisher" name="isextinguisher">
+											<option selected="selected" value="">请选择</option>
+											<option value="无">无</option>
+											<option value="有">有</option>
+										</select>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+			<div class="employeeBlock" style="width: 45%; height: auto; float: right;">
+				<div class="column">
+					<span class="current">从业人员信息</span>
+				</div>
+				<div style="margin-bottom: 10px">
+					从业人员：<input class="form-control" id="employeeSelect" name="employeeSelect" style="width: 200px; text-align: center;">
+				</div>
+				<div class="easyui-tabs addCarTab" style="width: 100%;" data-options="tabPosition:'top',height:620" id="eTable">
+					<input type="hidden" value="" id="emId" name="emId">
+					<div title="基本信息" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">姓名</td>
+									<td class="kv-content d_name_td"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">文档编号</td>
+									<td class="kv-content em_number"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">工作类型</td>
+									<td class="kv-content em_t_type"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">手机号码</td>
+									<td class="kv-content phone"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">身份证号</td>
+									<td class="kv-content id_card"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">身份证正面图片地址</td>
+									<td class="kv-content identity_just_pic">
+										<a href="javascript:;">查看</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="kv-label">身份证负面图片地址</td>
+									<td class="kv-content identity_minus_pic">
+										<a href="javascript:;">查看</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="诚信考核" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">诚信考核等级</td>
+									<td class="kv-content assess_grade"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">诚信考核有效时间</td>
+									<td class="kv-content start_end_time"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="驾驶证" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">准驾车型</td>
+									<td class="kv-content vehicle_model"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">驾驶证号码</td>
+									<td class="kv-content driving_number"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">初次领证日期</td>
+									<td class="kv-content driving_annual_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">驾驶证有效期</td>
+									<td class="kv-content driving_validity"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">驾驶证图片</td>
+									<td class="kv-content driving_license_pic">
+										<a href="javascript:;">查看</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div title="从业资格证" style="padding: 10px">
+						<table class="kv-table" style="width: 60%; margin: 0 auto;">
+							<tbody>
+								<tr>
+									<td class="kv-label">从业资格证号</td>
+									<td class="kv-content qualificationcode"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">从业范围</td>
+									<td class="kv-content work_class"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">从业资格证发证日期</td>
+									<td class="kv-content certificate_time"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">从业资格证有效期</td>
+									<td class="kv-content q_validity"></td>
+								</tr>
+								<tr>
+									<td class="kv-label">从业资格证图片</td>
+									<td class="kv-content certificate_pic">
+										<a href="javascript:;">查看</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+			<div style="clear: both; height: 0; line-height: 0; font-size: 0"></div>
+			<div class="basic-info">
+				<!-- <div class="linkBtn">
+						<a id="closeLinkBtn"
+						href="#" class="easyui-linkbutton backLink" style=""
+						data-options="iconCls:'icon-undo'" onclick="javascript:parent.mainPlatform.closeSelectedTab();">关闭</a> <a href="#"
+							class="easyui-linkbutton checkLink" iconCls="icon-ok"
+							onclick="saveForm($('#iAddCar'),'/sec/carBookInfo/addCartfulFirstgearBook','/sec/carBookInfo/cartfulFirstgearBookPage')">确定</a>
+					</div> -->
+			</div>
+		</form>
+		<img id="img" alt="" src="" style="display: none; position: absolute; top: 10%; left: 30%; width: 500px; width: 500px; z-index: 999" />
+	</div>
+	<!-- 上传图片window -->
+	<div id="uploadWin" class="easyui-dialog" style="width: 540px; height: 480px; top: 20px; padding: 10px 20px" data-options="closed:true,modal:true,buttons:'#upButtons'">
+		<div id="flashContainer"></div>
+	</div>
+	<div id="upButtons">
+		<a id="upPicBtn" href="javascript:;" onclick="upload()" class="easyui-linkbutton" data-options="toggle:true">上传</a>
+		<!-- <a id="cancelPicBtn" href="javascript:;" style="display:none" onclick="javascript:$('#uploadWin').dialog('close')" class="easyui-linkbutton" data-options="toggle:true">关闭</a> -->
+	</div>
+	<div id="showMultiPic" class="easyui-dialog" style="width: 700px; height: 95%; top: 20px; padding: 10px 20px" data-options="closed:true,modal:true,buttons:'#multiButtons'">
+		<div id="imgContent"></div>
+	</div>
+	<div id="multiButtons">
+		<a id="" href="javascript:;" onclick="javascript:$('#showMultiPic').dialog('close')" class="easyui-linkbutton" data-options="toggle:true">关闭</a>
+	</div>
+</div>
+<script type="text/javascript" src="javascript/car_dg.js"></script>
+<script type="text/javascript" src="javascript/tangram.js"></script>
+<script type="text/javascript">
+	$('.easyui-tabs1').tabs({
+		tabHeight: 36
+	});
+	$(window).resize(function() {
+		$('.easyui-tabs1').tabs("resize");
+	}).resize();
+
+	function saveCar() {
+		$.post("/sec/add/addCar", $("#iAddCar").serialize(), function(data,
+			status) {
+			if(data.result == 'Y') {
+				window.location.href = "/sec/page/carList";
+			} else {
+				$.messager.alert(' ', data.result);
+			}
+		});
+	}
+	/* if('${carInfo.gps_is_install}'=="Y"){
+		$(".hidTr input").attr("disabled",false);
+		$(".hidTr").show();
+	}else{
+		$(".hidTr").hide();
+		$(".hidTr input").attr("disabled",true);
+	} */
+	$(function() {
+
+		$("#gps_is_install").change(function() {
+			if($(this).val() == "有") {
+				$(".hidTr input").attr("disabled", false);
+				$(".hidTr").show();
+			} else {
+				$(".hidTr").hide();
+				$(".hidTr input").attr("disabled", true);
+			}
+		});
+		//车辆下拉框
+		$("#carSelect").combobox({
+			url: '/gs/carBookInfo/getAllCarForSelected',
+			valueField: 'value',
+			textField: 'label',
+			onSelect: function(record) {
+				$.post("/gs/carBookInfo/getCarById", {
+						id: record.value
+					},
+					function(data, status) {
+						var Object = JSON
+							.parse(data);
+						$("#cTable #carId").val(
+							Object.id);
+						$("#cTable #car_no").val(
+							Object.car_no);
+						$("#cTable .car_no").text(
+							Object.car_no);
+						$("#cTable #car_number").val(
+							Object.number);
+						$("#cTable #co_name").val(
+							Object.co_name);
+						$("#cTable #affiliated_contract_file_a").attr("onclick", "showImg('" + Object.affiliated_contract_file + "','affiliated_contract_file')");
+						$("#cTable #use_nature")
+							.val(Object.use_nature);
+						$("#cTable #engine_no")
+							.val(Object.engine_no);
+						$("#cTable #vehicle_colour")
+							.val(Object.vehicle_colour);
+						$("#cTable #vin").val(
+							Object.vin);
+						$("#cTable #car_t_type").val(
+							Object.t_type);
+						$("#cTable #model").val(
+							Object.model);
+						/* $("#cTable #affiliated_contract_file").val(
+										Object.affiliated_contract_file); */
+						$("#cTable #seats").val(
+							Object.seats);
+						$("#cTable #vehicle_type")
+							.val(Object.vehicle_type);
+						$("#cTable #car_appear_pic").next("a").attr("onclick", "showImg('" + Object.car_appear_pic + "','car_appear_pic')");
+						$("#cTable #maker_name")
+							.val(Object.maker_name);
+						$("#cTable #totalMass").val(
+							Object.totalMass);
+						$("#cTable #quality").val(
+							Object.quality);
+						$("#cTable #displacement")
+							.val(Object.displacement);
+						$("#cTable #power").val(
+							Object.power);
+						$("#cTable #registration_time")
+							.datebox('setValue',
+								Object.registration_time);
+						$("#cTable #annual_audit_time")
+							.datebox('setValue',
+								Object.annual_audit_time);
+						$("#cTable #car_pic").next("a").attr("onclick", "showImg('" + Object.car_pic + "','car_pic')");
+						$("#cTable #speed_limit")
+							.val(Object.speed_limit);
+						$("#cTable #length").val(
+							Object.length);
+						$("#cTable #wide").val(
+							Object.wide);
+						$("#cTable #high").val(
+							Object.high);
+						$("#cTable #l_no").val(
+							Object.l_no);
+						$("#cTable #l_early_date")
+							.datebox('setValue',
+								Object.l_early_date);
+						$("#cTable #l_valid_for_time")
+							.datebox('setValue',
+								Object.l_valid_for_time);
+						$("#cTable #l_validity")
+							.datebox('setValue',
+								Object.l_validity);
+						$("#cTable #t_no").val(
+							Object.t_no);
+						$("#cTable #t_validity")
+							.datebox('setValue',
+								Object.t_validity);
+						$("#cTable #t_early_date")
+							.datebox('setValue',
+								Object.t_early_date);
+						$("#cTable #t_pic").next("a").attr("onclick", "showImg('" + Object.t_pic + "','t_pic')");
+						$("#cTable #fm_time")
+							.datebox('setValue',
+								Object.fm_time);
+						/* $("#cTable #t_fm_time")
+								.datebox('setValue',
+										Object.t_fm_time);
+						$("#cTable #h_fm_time")
+								.datebox('setValue',
+										Object.f_fm_time);
+						$("#cTable #f_fm_time")
+						.datebox('setValue',
+								Object.f_fm_time); */
+						$("#cTable #grade").val(
+							Object.grade);
+						$("#cTable #traffic_insure_number")
+							.val(Object.traffic_insure_number);
+						$("#cTable #traffic_start_time")
+							.datebox('setValue',
+								Object.traffic_start_time);
+						$("#cTable #traffic_end_time")
+							.datebox('setValue',
+								Object.traffic_end_time);
+						$("#cTable #traffic_pic").next("a").attr("onclick", "showImg('" + Object.traffic_pic + "','traffic_pic')");
+						$("#cTable #commercial_insure_number")
+							.val(Object.commercial_insure_number);
+						$("#cTable #commercial_start_time")
+							.datebox('setValue',
+								Object.commercial_start_time);
+						$("#cTable #commercial_end_time")
+							.datebox('setValue',
+								Object.commercial_end_time);
+						$("#cTable #commercial_pic").next("a").attr("onclick", "showImg('" + Object.commercial_pic + "','commercial_pic')");
+						$("#cTable #third_insurance_coverage")
+							.val(Object.third_insurance_coverage);
+						$("#cTable #chesun_coverage")
+							.val(Object.chesun_coverage);
+						$("#cTable #ride_coverage")
+							.val(Object.ride_coverage);
+						$("#cTable #regardless_coverage")
+							.val(Object.regardless_coverage);
+						$("#cTable #gps_time")
+							.datebox('setValue',
+								Object.gps_time);
+						$("#cTable #gps_validity")
+							.datebox('setValue',
+								Object.gps_validity);
+						$("#cTable #iscleat").val(
+							Object.iscleat);
+						$("#cTable #robbing")
+							.val(Object.robbing);
+						$("#cTable #catacausis_insurance")
+							.val(Object.catacausis_insurance);
+						$("#cTable #cargo_liability")
+							.val(Object.cargo_liability);
+						$("#cTable #gps_is_install")
+							.val(Object.gps_is_install);
+						$("#cTable #gps_brand_model")
+							.val(Object.gps_brand_model);
+						$("#cTable #isextinguisher")
+							.val(Object.isextinguisher);
+						$("#cTable #gps_install_date")
+							.datebox('setValue', Object.gps_install_date);
+						$("#cTable #technical_grade")
+							.val(Object.technical_grade);
+						$("#cTable #technical_grade_eval_time")
+							.datebox('setValue', Object.technical_grade_eval_time);
+						$("#cTable #technical_grade_eval_result")
+							.val(Object.technical_grade_eval_result);
+						$("#cTable #gradeSelect")
+							.val(Object.grade);
+						$("#cTable #communication_card_no")
+							.val(Object.communication_card_no);
+						$("#cTable #gps_operator")
+							.val(Object.gps_operator);
+						$("#cTable #l_pic").next("a").attr("onclick", "showImg('" + Object.l_pic + "','l_pic')");
+						$("#cTable #fm_pic").next("a").attr("onclick", "showImg('" + Object.fm_pic + "','fm_pic')");
+						$("#cTable #gps_testify_pic").next("a").attr("onclick", "showImg('" + Object.gps_testify_pic + "','gps_testify_pic')");
+						$("#gps_is_install").change();
+					});
+
+			}
+		});
+		$("#employeeSelect").combobox({
+			url: '/gs/carBookInfo/getAllEmployeeForSelected',
+			valueField: 'value',
+			textField: 'label',
+			onSelect: function(record) {
+				$.post("/gs/carBookInfo/getEmployeeById", {
+						id: record.value
+					},
+					function(data, status) {
+						var Object = JSON.parse(data);
+						//alert()
+						$("#eTable .emId").text(
+							Object.id);
+						var em_t_type_text = Object.t_type == "J" ? "驾驶员" : (Object.t_type == "Y" ? "押运员" : (Object.t_type == "J&Y" ? "驾驶员,押运员" : ""));
+						$("#eTable .em_t_type")
+							.text(em_t_type_text);
+						$("#eTable .d_name_td")
+							.text(Object.d_name);
+						$("#eTable .em_number")
+							.text(Object.number);
+						$("#eTable .id_card").text(
+							Object.id_card);
+						$("#eTable .phone").text(
+							Object.phone);
+						$(
+								"#eTable .qualificationcode")
+							.text(
+								Object.qualificationcode);
+						//var work_class_text=Object.work_class=="H"?"货运":"客运";
+						$("#eTable .work_class")
+							.text(Object.work_class);
+						$(
+								"#eTable .certificate_time")
+							.text(Object.certificate_time == null ? "" : Object.certificate_time);
+						var q_validity = Object.q_validity == null ? "" : Object.q_validity;
+						$("#eTable .q_validity")
+							.text(q_validity);
+						$("#eTable .assess_grade")
+							.text(
+								Object.assess_grade);
+						var start_end_time = Object.start_end_time == null ? "" : Object.start_end_time;
+						$("#eTable .start_end_time")
+							.text(start_end_time);
+						$("#eTable .vehicle_model")
+							.text(
+								Object.vehicle_model);
+						$("#eTable .driving_number")
+							.text(
+								Object.driving_number);
+						var driving_annual_time = Object.driving_annual_time == null ? "" : Object.driving_annual_time;
+						$(
+								"#eTable .driving_annual_time")
+							.text(driving_annual_time);
+						var driving_validity = Object.driving_validity == null ? "" : Object.driving_validity;
+						$(
+								"#eTable .driving_validity")
+							.text(driving_validity);
+						$("#eTable .identity_just_pic").children("a").attr("onclick", "showImg('" + Object.identity_just_pic + "')");
+						$("#eTable .identity_minus_pic").children("a").attr("onclick", "showImg('" + Object.identity_minus_pic + "')");
+						$("#eTable .driving_license_pic").children("a").attr("onclick", "showImg('" + Object.driving_license_pic + "')");
+						$("#eTable .certificate_pic").children("a").attr("onclick", "showImg('" + Object.certificate_pic + "')");
+					});
+			}
+		});
+		/* alert('${param.employee_id}');
+		if('${param.emplyee_id}'!=null && '${param.employee_id}'!=undefined){
+			$("#employeeSelect").combobox("select",'${param.employee_id}');
+		}
+		if('${param.car_id}'!=null && '${param.car_id}'!=undefined){
+			$("#carSelect").combobox("select",'${param.emplyee_id}');
+		} */
+
+		//$(".carBlock .tabs-panels .panel:eq(3)").height()
+
+	});
+	$(".bindingEm").combobox({
+		url: '/gs/carBookInfo/getAllEmployeeForSelected',
+		valueField: 'value',
+		textField: 'label'
+	});
+
+	function addNewEm(obj) {
+		if($("#emTable tbody").children("tr").first().text() == "新增") {
+			$("#emTable tbody").children("tr").first().remove();
+		}
+
+		var objs = $("input[name='employees']");
+		var hasEmpty = false;
+		$.each(objs, function(index, lData) {
+			if(lData.value.length == 0) {
+				$.messager.alert(' ', "请选择从业人员.");
+				hasEmpty = true;
+			}
+		});
+		if(!hasEmpty) {
+			$("#emTable tbody").append("<tr>" +
+				"<td class=\"kv-label\">从业人员:</td>" +
+				"<td class=\"kv-content\"><input type=\"text\"" +
+				"class=\"form-control bindingEm\" name=\"employees\">" +
+				"</td>" +
+				"<td class=\"kv-label\"><a href=\"javascript:void(0)\" onclick=\"addNewEm()\">新增</a>　　<a href=\"javascript:void(0)\" onclick=\"removeNewEm(this)\">删除</a>　　<a href=\"javascript:void(0)\" onclick=\"showThisEm(this)\">查看</a></td>" +
+				"</tr>");
+		}
+
+		$("#emTable tbody").children("tr").last().find("input").combobox({
+			url: '/gs/carBookInfo/getAllEmployeeForSelected',
+			valueField: 'value',
+			textField: 'label',
+			onSelect: function(n) {
+
+			},
+			loadFilter: function(data) {
+				var objs = $("input[name='employees']");
+				var newIndex = 0;
+				var fData = new Array()
+				$.each(data, function(idx, sData) {
+					var exists = false;
+					$.each(objs, function(index, lData) {
+						if(sData.value == lData.value) {
+							exists = true;
+							return;
+						}
+					});
+					if(!exists) {
+						fData.push(sData);
+					}
+				});
+				return fData;
+			}
+		});
+	}
+	//绑定从业人员查看从业人员信息
+	function showThisEm(obj) {
+		var selectEm = $(obj).parents("tr").find("input").combobox('getValue');
+		if(selectEm != null && selectEm != "") {
+			$("#employeeSelect").combobox("select", selectEm)
+		} else {
+			return false
+		}
+	}
+
+	function removeNewEm(obj) {
+		$(obj).parents("tr").remove();
+		if(!$("#emTable tbody").children("tr").is("tr")) {
+			$("#emTable tbody").append("<tr>" +
+				"<td><a href=\"javascript:void(0)\" onclick=\"addNewEm()\">新增</a></td>" +
+				"</tr>");
+		}
+	}
+
+	function saveForm(formObj, saveUrl, returnUrl) {
+		formObj.form('submit', {
+			url: saveUrl + '?rnd=' + new Date().getTime(),
+			onSubmit: function() {
+				//var file = $("#file").val();	   		        	
+				//var isValid = $(this).form('validate');
+				//return isValid;
+				if($("#carSelect").combobox("getValue") == "") {
+					$.messager.alert("提示", "请先选择要绑定的车辆", "info");
+					return false;
+				}
+				if($("#emTable .bindingEm").length > 0) {
+					if($("#emTable .bindingEm").combobox("getValue") == "" || $("#emTable .bindingEm").combobox("getValue") == undefined) {
+						$.messager.alert("提示", "至少要选择一名从人员绑定", "info");
+						return false;
+					}
+				} else {
+					$.messager.alert("提示", "至少要选择一名从人员绑定", "info");
+					return false;
+				}
+				if($("#car_no").val() == "") {
+					$.messager.alert('提示', '请选择系统中的车辆!', '');
+					return false;
+				}
+
+				//设置统一验证返回值
+				isSubmit = null;
+
+				var files = $("input[type='file']");
+				for(var i = 0; i < files.length; i++) {
+					var filePath = $(files[i]).val();
+					if(filePath != "") {
+						var type = filePath.substring(filePath.indexOf("."));
+						if(checkImgType(type) == "false") {
+							var info = $(files[i]).parent().prev().text() + " 上传文件格式有误,请选择格式正确的文件";
+							$.messager.alert("提示", info);
+							isSubmit = false;
+						}
+					}
+				}
+				var isValid = $(this).form('validate');
+				if(isSubmit != false) {
+					isSubmit = isValid;
+				}
+				if(isSubmit) {
+					$.messager.progress();
+				}
+				return isSubmit;
+				/* var doms = $(".carBlock")
+						.find("input[required='true']").add(
+								"select[required='true']").add("input.easyui-datebox");
+				$(doms, ".carBlock").each(function() {
+					$(this).validatebox();
+				});
+				for (var int = 0; int < doms.length; int++) {
+					if (!$(doms[int]).hasClass("easyui-datebox")) {
+						if (!$(doms[int]).validatebox("isValid")) {
+
+							//if($(doms[int]).attr("textboxname")=="registration_time"){
+							//$(doms[int]).next("span").children("input:first").addClass("tooltip-f");
+							//}
+							$(".carBlock .panel")
+										.css("display", "none");
+								$(doms[int]).parents(".panel").css(
+										"display", "block");
+								//获取点击的第几个panel对应tabs的index
+								var tabIndex = $(".carBlock .panel").index(
+										$(doms[int]).parents(".panel"));
+								$(".carBlock .tabs-wrap ul li")
+										.removeClass("tabs-selected");
+								$(
+										".carBlock .tabs-wrap ul li:eq("
+												+ tabIndex + ")").addClass(
+										"tabs-selected");
+								$(doms[int]).focus();
+							return false;
+						}
+					} else {
+						if ($(doms[int]).datebox("getValue") != "") {
+							continue;
+						}
+						$(".carBlock .panel").css("display", "none");
+						$(doms[int]).parents(".panel").css("display",
+								"block");
+						//获取点击的第几个panel对应tabs的index
+						var tabIndex = $(".carBlock .panel").index(
+								$(doms[int]).parents(".panel"));
+						$(".carBlock .tabs-wrap ul li").removeClass(
+								"tabs-selected");
+						$(
+								".carBlock .tabs-wrap ul li:eq("
+										+ tabIndex + ")").addClass(
+								"tabs-selected");
+						return false;
+					}
+					//if()
+					//$(doms[int]).parents(".panel").attr("display","block");
+				} */
+				return true;
+			},
+			success: function(result) {
+				$.messager.progress('close');
+				data = $.parseJSON(result);
+				if(data.result == "Y") {
+					$.messager.alert('提示', '保存成功', '', function() {
+						parent.window.mainPlatform.reloadTab("一车一档").reload();
+						parent.mainPlatform.closeSelectedTab();
+					});
+				} else {
+					$.messager.alert('提示', '保存失败，请刷新页面后重试', '');
+				}
+			}
+		});
+	}
+	$(document).ready(function() {
+		$(".employeeBlock #eTable .tabs-panels").css("height", "500px");
+	});
+	var flashObj = uploadPic();
+
+	function uploadPic(type) {
+		$("#flashContainer").html("");
+		/*-=-=-=-=-=-=-=全局变量模块-=-=-=-=-=-=-*/
+		//flash初始化参数  
+		var flashOptions = {
+			createOptions: {
+				id: 'flash',
+				url: '/js/uploadImg/image/imageUploader.swf', //这个就是附件里面的FLASH  
+				width: '510', //容器宽度  
+				height: '360', //容器高度  
+				errorMessage: 'Flash插件初始化错误，请更新您的flashplayer版本！',
+				wmode: 'window',
+				ver: '10.0.0',
+				// 初始化的参数就是这些，  
+				vars: {
+					width: 500, //width是flash的宽  
+					height: 350, //height是flash的高  
+					gridWidth: 115, // gridWidth是每一个预览图片所占的宽度，应该为width的整除  
+					gridHeight: 120, // gridHeight是每一个预览图片所占的高度，应该为height的整除  
+					picWidth: 100, // 单张预览图片的宽度  
+					picHeight: 100, // 单张预览图片的高度  
+					uploadDataFieldName: 'picdata', // POST请求中图片数据的key  
+					picDescFieldName: 'pictitle', // POST请求中图片描述的key  
+					maxSize: 2, // 文件的最大体积,单位M  
+					compressSize: 2, // 上传前如果图片体积超过该值，会先压缩,单位M  
+					maxNum: 20, // 最大上传多少个文件  
+					backgroundUrl: '', //背景图片,留空默认  
+					listBackgroundUrl: '', //预览图背景，留空默认  
+					buttonUrl: '', //按钮背景，留空默认  
+					compressSide: 1, //等比压缩的基准，0为按照最长边，1为按照宽度，2为按照高度  
+					compressLength: 700, // 能接受的最大边长，超过该值Flash会自动等比压缩  
+					url: '/sec/ueditorUpload/test', // 上传处理页面的url地址  
+					ext: null, //扩展的参数,json格式  
+					fileType: '{"description":"图片(*.jpg,*.jpeg,*.png,*.gif)", "extension":"*.gif;*.jpeg;*.png;*.jpg"}' //上传文件格式限制  
+				},
+				container: 'flashContainer' //flash容器id  
+			},
+			selectFileCallback: function(selectFiles) { //选择文件时的回调函数  
+				selectedImageCount += selectFiles.length;
+				if(selectedImageCount) baidu.g("upload").style.display = "";
+				dialog.buttons[0].setDisabled(true); //初始化时置灰确定按钮   
+			},
+			exceedFileCallback: 'exceedFileCallback', // 文件超出限制的最大体积时的回调  
+			deleteFileCallback: function(delFiles) { //删除文件时的回调函数  
+				selectedImageCount -= delFiles.length;
+				if(!selectedImageCount) {
+					baidu.g("upload").style.display = "none";
+					dialog.buttons[0].setDisabled(false); //没有选择图片时重新点亮按钮  
+				}
+			},
+			startUploadCallback: 'startUploadCallback', // 开始上传某个文件时的回调  
+			uploadCompleteCallback: 'uploadCompleteCallback', // 某个文件上传完成的回调  
+			uploadErrorCallback: function(data) {
+				//console && console.log(data);  
+			}, // 某个文件上传失败的回调  
+			allCompleteCallback: function(data) {
+				if(type == "affiliated_contract_file") {
+					$("#affiliated_contract_file").val(picPath);
+				} else if(type == "car_pic") {
+					$("#car_pic").val(picPath);
+				}
+				// alert(picPath);  
+				picPath = "";
+				$("#uploadWin").window("close");
+				//$("#upPicBtn").hide();
+				// $("#cancelPicBtn").show();
+			} // 全部上传完成时的回调  
+			//changeFlashHeight: 'changeFlashHeight'     // 改变Flash的高度，mode==1的时候才有用  
+
+		};
+		return new baidu.flash.imageUploader(flashOptions);
+	};
+	/** 
+	 *上传图片 
+	 */
+	var picPath = "";
+
+	function upload() {
+		flashObj.upload();
+	};
+
+	function changeUploadObj(type) {
+		flashObj = uploadPic(type);
+	}
+	/** 
+	 * 文件大小超出时的回调函数 
+	 * @param   Object 
+	 */
+	function exceedFileCallback(file) {
+		// 参数为Object，{index:在多图上传的索引号, name:文件名, size:文件大小}  
+		// 其中size单位为Byte  
+		//console.log("文件超出大小限制：");  
+		// console.log(file.index, file.name, file.size);  
+		// console.log("===================================");  
+	};
+
+	/** 
+	 * 开始上传单个文件的回调函数 
+	 * @param   Object 
+	 */
+	function startUploadCallback(file) {
+
+		// console.log("开始上传如下文件：");  
+		// console.log(file.name, file.size);  
+		// console.log("===================================");  
+	};
+	/** 
+	 * 单个文件上传完成的回调函数 
+	 * @param   Object/String   服务端返回啥，参数就是啥 
+	 */
+	function uploadCompleteCallback(data) {
+		//将url保存到用户信息上  
+		// console.log("上传成功", data); 
+		var obj = JSON.parse(data.info);
+		picPath += obj.url + ";";
+		// console.log("===================================");  
+	};
+	/** 
+	 * 单个文件上传失败的回调函数 
+	 * @param  Object/String   服务端返回啥，参数就是啥 
+	 */
+	function uploadErrorCallback(data) {
+		//console.log("上传失败", data);  
+		// console.log("===================================");  
+	};
+	/** 
+	 * 全部上传完成的回调函数 
+	 */
+	function allCompleteCallback(data) {
+		$("#affiliated_contract_file").val(picPath);
+		// alert(picPath);  
+		picPath = "";
+		$("#uploadWin").window("close");
+	};
+
+	function showImg(path, picType) {
+		if(path == null || path == "" || path == "undefined" || path == "null") {
+			$.messager.alert('提示', '未上传图片', '');
+		} else {
+			var picPath = path.split(";");
+			if(picPath.length > 1) {
+				$("#imgContent").css("height", "100%");
+				$("#imgContent").css("width", $("#showMultiPic").width());
+				var imgHtml = "";
+				for(var i = 0; i < picPath.length; i++) {
+					imgHtml += "<img src=\/" + picPath[i] + " style=\"width:" + $("#imgContent").width() + "px;height:400px\" onclick=\"delClickImg('" + picPath[i] + "','" + picType + "',this)\"/>";
+				}
+				$("#imgContent").html(imgHtml);
+				$("#showMultiPic").dialog('open');
+			} else {
+				$("#imgContent").html("<img src=\/" + path + " style=\"width:100%\" onclick=\"delClickImg('" + path + "','" + picType + "',this)\"/>");
+				$("#showMultiPic").dialog('open');
+				/* $('#img').attr('src', "/"+path);
+				$('#img').show(); */
+			}
+		}
+	}
+
+	function delClickImg(path, picType, obj) {
+		var removePicName = obj.id;
+		$.messager.confirm("操作提示", "您确定要删除该图片吗？", function(data) {
+			if(data) {
+				$.post('/sec/baseInfo/delCarBaseInfoPic', {
+					car_id: $("#cTable #carId").val(),
+					picPath: path,
+					picType: picType
+				}, function(data) {
+					if(data.result == "Y") {
+						$("#" + picType + "_a").attr("onclick", "showImg('" + data.newPath + "','" + picType + "')");
+						$.messager.alert('提示', '删除成功', '');
+					} else
+						$.messager.alert('提示', '删除失败', '');
+				});
+				$(obj).remove();
+			}
+		})
+	}
+</script>

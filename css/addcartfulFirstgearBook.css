@@ -1,0 +1,139 @@
+/* *
+ * easyui样式修改
+ * 
+ * */
+.tabs-scroller-left,
+.tabs-scroller-right{
+	background-color: transparent;
+	border: none;
+}
+
+/* * 
+ * 用户自定义样式 
+ * 
+ * */
+
+.column{
+	/*标题*/
+	text-align: center;
+	font-size: 24px;
+	color: #eee;
+	margin: 10px 0;
+}
+.column + div{
+	/*标题下方选择框label*/
+	position: relative;
+	left: 15px;
+	color: #eee;
+	font-size: 16px;
+}
+.carBlock{
+	/*左边外层div*/
+	position: relative;
+	top: 20px;
+	left: 4%;
+}
+.carBlock .tabs-header{
+	background: rgba(225,225,225,0.2);
+}
+.employeeBlock{
+	/*右边外层div*/
+	position: relative;
+	top: 20px;
+	right: 4%;
+}
+.addCarTab>.tabs-panels>div>div{
+	/* 框中背景设置，统一设置背景时用的id选择器优先级比class高，使用强制改变。   */
+	background: rgba(225,225,225,0.2) !important; 
+}
+.carBlock .kv-label{
+	/*表格label样式*/
+	background: rgba(44, 63, 93, 0.6);
+	color: #eee;
+	line-height: 24px;
+	text-align: center;
+}
+.kv-content{
+	width: 220px;
+}
+.carBlock .form-control,
+.carBlock .kv-content>input[type="text"],
+.carBlock .kv-content>input[type="number"]{
+	/*input统一样式*/
+	height: 24px;
+	line-height: 24px;
+	width: 220px;
+}
+.carBlock select.form-control{
+	height: 30px;
+	width: 229px;
+}
+.carBlock .kv-content>input[type="text"],
+.carBlock .kv-content>input[type="number"]{
+	/*input文本框样式*/
+	padding-left: 5px;
+}
+.carBlock .kv-content>input[type="button"]{
+	/*input按钮样式*/
+	border: 1px solid #577EB2;
+	background: transparent;
+	padding: 4px 10px;
+	color: #0081C2;
+	transition: all 0.5s;
+}
+.carBlock .kv-content>input[type="button"]:hover{
+	background: rgba(225,225,225,0.8);
+}
+
+.carBlock .kv-content>input[type="file"]{
+	/*input文件上传样式*/
+	width: 195px;
+}
+.carBlock a{
+	font-size: 14px;
+}
+.carBlock a:link{
+	color: #0081C2;
+}
+.carBlock a:visited{
+	color: #0081C2;
+}
+.carBlock a:hover{
+	color: #0AA1EA;
+}
+.carBlock a:active{
+	color: #0081C2;
+}
+
+.addCarTab .tabs li a.tabs-inner {
+	/*固定选项卡高度*/
+	height: 28px !important;
+}
+
+.addCarTab .tabs li a.tabs-inner>.tabs-title {
+	/*选项卡文字*/
+	font-size: 14px;
+}
+
+.addCarTab .tabs li a:nth-child(1) {
+	/*设置tab选项卡默认样式*/
+	color: #eee;
+	border: none;
+	/*background: linear-gradient(rgba(83, 166, 226, 0.6), rgba(10, 111, 183, 0.8));*/
+	background: transparent;
+}
+
+.addCarTab .tabs li.tabs-selected a:nth-child(1) {
+	/*设置tab选项卡选中时默认样式*/
+	/*background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));*/
+	background: transparent;
+	color: #eee;
+	transition: none;
+	border-bottom: 3px solid #fff;
+}
+
+.addCarTab .tabs li a.tabs-inner:hover {
+	/*设置tab选项卡悬浮样式*/
+	/*background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));*/
+	background: transparent;
+}
