@@ -33,8 +33,8 @@
 	top: 20px;
 	left: 4%;
 }
-.carBlock .tabs-header{
-	background: rgba(225,225,225,0.2);
+.tabs-header{
+	/*background: rgba(225,225,225,0.2);*/
 }
 .employeeBlock{
 	/*右边外层div*/
@@ -46,34 +46,35 @@
 	/* 框中背景设置，统一设置背景时用的id选择器优先级比class高，使用强制改变。   */
 	background: rgba(225,225,225,0.2) !important; 
 }
-.carBlock .kv-label{
+.kv-label{
 	/*表格label样式*/
 	background: rgba(44, 63, 93, 0.6);
 	color: #eee;
 	line-height: 24px;
 	text-align: center;
+	min-width: 100px;
 }
 .kv-content{
 	width: 220px;
 }
-.carBlock .form-control,
-.carBlock .kv-content>input[type="text"],
-.carBlock .kv-content>input[type="number"]{
+.form-control,
+.kv-content>input[type="text"],
+.kv-content>input[type="number"]{
 	/*input统一样式*/
 	height: 24px;
 	line-height: 24px;
 	width: 220px;
 }
-.carBlock select.form-control{
+select.form-control{
 	height: 30px;
 	width: 229px;
 }
-.carBlock .kv-content>input[type="text"],
-.carBlock .kv-content>input[type="number"]{
+.kv-content>input[type="text"],
+.kv-content>input[type="number"]{
 	/*input文本框样式*/
 	padding-left: 5px;
 }
-.carBlock .kv-content>input[type="button"]{
+.kv-content>input[type="button"]{
 	/*input按钮样式*/
 	border: 1px solid #577EB2;
 	background: transparent;
@@ -81,28 +82,45 @@
 	color: #0081C2;
 	transition: all 0.5s;
 }
-.carBlock .kv-content>input[type="button"]:hover{
+.kv-content>input[type="button"]:hover{
 	background: rgba(225,225,225,0.8);
 }
 
-.carBlock .kv-content>input[type="file"]{
+.kv-content>input[type="file"]{
 	/*input文件上传样式*/
 	width: 195px;
+	color: rgba(0, 92, 168, 0.8);
 }
-.carBlock a{
+.addCarTab a{
+	position: relative;
+	color: rgba(0, 92, 168, 0.8);
 	font-size: 14px;
+	transition: all 0.5s;
 }
-.carBlock a:link{
-	color: #0081C2;
+.addCarTab a::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	height: 2px;
+	width: 0px;
+	transition: all 0.5s;
+	background: #fff;
 }
-.carBlock a:visited{
-	color: #0081C2;
+.addCarTab a:link{
+	color: rgba(0, 92, 168, 0.8);
 }
-.carBlock a:hover{
-	color: #0AA1EA;
+.addCarTab a:visited{
+	color: rgba(0, 92, 168, 0.8);
 }
-.carBlock a:active{
-	color: #0081C2;
+.addCarTab a:hover{
+	color: rgba(0, 67, 168, 0.8);
+}
+.addCarTab a:hover::before{
+	width: 100%;
+}
+.addCarTab a:active{
+	color: rgba(0, 92, 168, 0.8);
 }
 
 .addCarTab .tabs li a.tabs-inner {
@@ -119,21 +137,21 @@
 	/*设置tab选项卡默认样式*/
 	color: #eee;
 	border: none;
-	/*background: linear-gradient(rgba(83, 166, 226, 0.6), rgba(10, 111, 183, 0.8));*/
 	background: transparent;
+	transition: none;
 }
 
 .addCarTab .tabs li.tabs-selected a:nth-child(1) {
 	/*设置tab选项卡选中时默认样式*/
-	/*background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));*/
 	background: transparent;
 	color: #eee;
-	transition: none;
-	border-bottom: 3px solid #fff;
+	border: none;
+	border-bottom: 4px solid #fff;
 }
 
 .addCarTab .tabs li a.tabs-inner:hover {
 	/*设置tab选项卡悬浮样式*/
-	/*background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));*/
 	background: transparent;
 }
+
+
