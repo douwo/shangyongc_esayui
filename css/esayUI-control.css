@@ -1,82 +1,84 @@
 html,
 body {
-	margin: 0;
-	padding: 0;
-	font-family: "微软雅黑";
-	height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    height: 100%;
 }
-
-
+a{
+	color: rgb(139, 198, 247);
+}
+a:hover{
+	color: rgb(139, 182, 247);
+}
 /* easyui统一样式改变 */
 
-
 /* 选项卡样式 start */
-
 .tabs {
-	/*选项卡区域底部边框*/
-	/*border-bottom: 1px solid rgba(83, 166, 226, 0.4);*/
-	border-bottom: 0;
-	/*box-shadow: 0 2px 5px 0 #333;*/
+    /*选项卡区域底部边框*/
+    /*border-bottom: 1px solid rgba(83, 166, 226, 0.4);*/
+    border-bottom: 0;
+
+    /*box-shadow: 0 2px 5px 0 #333;*/
 }
 
 .usersTable .tabs-header {
-	/* 选项卡区域背景 */
-	background: rgba(0, 0, 0, 0.3);
-}
+    /* 选项卡区域背景 */
+    background: rgb(67, 151, 172);
+} 
 
 .usersTable .panel-body {
-	/* tab选项卡打开窗口内容清除滚动条 */
-	overflow-x: hidden;
+    /* tab选项卡打开窗口内容清除滚动条 */
+    overflow-x: hidden;
 }
 
 .usersTable .tabs li a.tabs-close {
-	/*关闭按钮*/
-	background-position: -33px center;
-	transition: all 0.3s !important;
-	background-color: transparent;
-	border-radius: 100%;
+    /*关闭按钮*/
+    background-position: -33px center;
+    transition: all 0.3s !important;
+    background-color: transparent;
+    border-radius: 100%;
 }
 
 .usersTable .tabs li a.tabs-close:hover {
-	background-color: rgba(222, 222, 222, 0.5);
+    background-color: rgba(222, 222, 222, 0.5);
 }
 
 .tabs-p-tool a:hover,
 .tabs li a:hover.tabs-close,
 .tabs-scroller-over {
-	background-color: #eee;
+    background-color: #eee;
 }
 
 .usersTable .tabs li a.tabs-inner {
-	/*固定选项卡高度*/
-	height: 36px !important;
+    /*固定选项卡高度*/
+    height: 36px !important;
 }
 
-.usersTable .tabs li a.tabs-inner>.tabs-title {
-	/*选项卡文字*/
-	font-size: 14px;
+.usersTable .tabs li a.tabs-inner > .tabs-title {
+    /*选项卡文字*/
+    font-size: 14px;
 }
 
 .usersTable .tabs li a:nth-child(1) {
-	/*设置tab选项卡默认样式*/
-	color: #eee;
-	border: none;
-	background: linear-gradient(rgba(83, 166, 226, 0.6), rgba(10, 111, 183, 0.8));
+    /*设置tab选项卡默认样式*/
+    color: #eee;
+    border: none;
+    background: linear-gradient(rgba(83, 166, 226, 0.6), rgba(10, 111, 183, 0.8));
 }
 
 .usersTable .tabs li.tabs-selected a:nth-child(1) {
-	/*设置tab选项卡选中时默认样式*/
-	background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
-	border: none;
-	color: #eee;
+    /*设置tab选项卡选中时默认样式*/
+    background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
+    border: none;
+    color: #eee;
 }
 
 .usersTable .tabs li a.tabs-inner:hover {
-	/*设置tab选项卡悬浮样式*/
-	background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
-	border: none;
+    /*设置tab选项卡悬浮样式*/
+    background: linear-gradient(rgb(83, 166, 226), rgb(10, 111, 183));
+    border: none;
 }
-
 
 /* *
  * 
@@ -85,417 +87,398 @@ body {
  * */
 
 #funTab .panel-body.panel-body-noheader.panel-body-noborder {
-	/*所有子界面背景*/
-	background: url(../img/ifream-bg4.jpg) top;
-	background-size: 100% 100%;
+    /*所有子界面背景*/
+    background: url(../img/ifream-bg4.jpg) top;
+    background-size: 100% 100%;
 }
 
-
 /* 按钮样式 */
-
 .easyui-linkbutton {
-	/*按钮颜色*/
-	width: auto;
-	color: #eee !important;
-	padding: 3px 10px;
-	transition: all 0.2s;
-	background-color: transparent;
-	border: 1px solid #fff;
-	border-radius: 1px;
-	outline: none;
+    /*按钮颜色*/
+    width: auto;
+    color: #eee !important;
+    padding: 3px 10px;
+    transition: all 0.2s;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 1px;
+    outline: none;
 }
 
 .easyui-linkbutton:hover {
-	background-color: rgba(225, 225, 225, 0.3);
-	width: auto;
-	padding: 3px 14px;
-	border: 1px solid #fff;
+    background-color: rgba(225, 225, 225, 0.3);
+    width: auto;
+    padding: 3px 14px;
+    border: 1px solid #fff;
 }
 
 .easyui-linkbutton:active {
-	box-shadow: none;
-	background-color: rgba(225, 225, 225, 0.6);
+    box-shadow: none;
+    background-color: rgba(225, 225, 225, 0.6);
 }
 
-
 /*工具栏底部刷新按钮*/
-
 .l-btn-plain {
-	border-color: transparent;
-	outline: none;
+    border-color: transparent;
+    outline: none;
 }
 
 .l-btn-plain:hover {
-	background-color: rgba(0, 0, 0, 0.8);
-	border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: transparent;
 }
-
 
 /* .datagrid-toolbar .l-btn-plain:hover{
 	border:none;
 } */
 
 .input-style {
-	/*自定义文本输入框样式*/
-	width: 120px;
-	padding-left: 10px;
-	transition: all 0.3s;
-	border-radius: 6px;
+    /*自定义文本输入框样式*/
+    width: 120px;
+    padding-left: 10px;
+    transition: all 0.3s;
+    border-radius: 6px;
 }
 
 .input-style:focus {
-	width: 160px;
-	outline: none;
-	box-shadow: 0 0px 6px 0px #ccc;
+    width: 160px;
+    outline: none;
+    box-shadow: 0 0px 6px 0px #ccc;
 }
 
-
 /* 文本输入框 */
-
 .textbox {
-	margin-right: 5px;
-	border-radius: 1px;
+    margin-right: 5px;
+    border-radius: 1px;
 }
 
 .textbox-focused {
-	transition: all 0.3s;
-	/*esayui自带输入框获取焦点时样式*/
-	box-shadow: 0 0 10px 0 deepskyblue
+    transition: all 0.3s;
+
+    /*esayui自带输入框获取焦点时样式*/
+    box-shadow: 0 0 10px 0 deepskyblue;
 }
 
 .datagrid-wrap {
-	/*表格背景透明*/
-	background: transparent;
-	color: #fff;
+    /*表格背景透明*/
+    background: transparent;
+    color: #fff;
 }
 
 .datagrid-header,
-.datagrid-header-row {
-	/*表头样式*/
-	height: 34px !important;
-	border: none;
-	background: transparent;
+.datagrid-header-row,
+.datagrid-header-row > .datagrid-cell-group {
+    /*表头样式*/
+    height: 34px;
+    border: none;
+    background: transparent;
 	border-bottom: 1px solid #eee;
+	color: #eee;
 }
 
 .datagrid-header .datagrid-cell {
-	color: #fff;
+    color: #fff;
 }
 
 .datagrid-header-inner {
-	/*表格头部宽度继承父元素*/
-	background: transparent;
-	width: inherit;
+    /*表格头部宽度继承父元素*/
+    background: transparent;
+    width: inherit;
 }
 
 .datagrid-cell-rownumber {
-	/*数字id*/
-	color: #eee;
-	border-right: 1px solid #aaa;
+    /*数字id*/
+    color: #eee;
+    border-right: 1px solid #aaa;
 }
 
 .datagrid-cell-rownumber:hover {
-	font-weight: bold;
-	font-size: 14px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-.datagrid-header td,
-.datagrid-body td,
-.datagrid-footer td {
-	/*单元格样式*/
-	background: rgba(0, 0, 0, 0.2);
-	height: 35px;
-	color: #eee;
-	border-width: 0 1px 1px 0;
-	border-color: transparent;
+.datagrid-header td, .datagrid-body td, .datagrid-footer td {
+    /*单元格样式*/
+    background: rgba(0, 0, 0, 0.2);
+    height: 35px;
+    color: #eee;
+    border-width: 0 1px 1px 0;
+    border-color: transparent;
 }
 
 .datagrid-header td {
-	transition: all 0.8s;
+    transition: all 0.8s;
 }
 
-.datagrid-header td:hover,
-.datagrid-body td:hover,
-.datagrid-footer td:hover {
-	font-weight: bold;
+.datagrid-header td:hover, .datagrid-body td:hover, .datagrid-footer td:hover {
+    font-weight: bold;
 }
 
 .datagrid-header td:hover {
-	color: #fff;
-	font-weight: bold;
+    color: #fff;
+    font-weight: bold;
 }
 
-.datagrid-cell,
-.datagrid-cell span {
-	font-size: 14px !important;
+.datagrid-cell, .datagrid-cell span {
+    font-size: 14px !important;
 }
 
 .datagrid-htable {
-	/*单元格字体颜色*/
-	width: inherit;
-	color: #eee;
+    /*单元格字体颜色*/
+    width: inherit;
+    color: #eee;
 }
 
 .datagrid-btable {
-	width: inherit;
+    width: inherit;
 }
 
 .datagrid-btable tr:nth-child(2n) {
-	/*斑马纹*/
-	background: rgba(0, 0, 0, 0.2);
+    /*斑马纹*/
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .datagrid-row-over {
-	/*background: rgba(75, 132, 255, 0.5);*/
-	background: linear-gradient(rgba(225, 225, 245, 0.4), rgba(225, 225, 245, 0.2)) !important;
-	color: #fff;
+    /*background: rgba(75, 132, 255, 0.5);*/
+    background: linear-gradient(rgba(225, 225, 245, 0.4), rgba(225, 225, 245, 0.2)) !important;
+    color: #fff;
 }
 
 .datagrid-row-selected {
-	color: #fff;
-	background: linear-gradient(rgba(225, 225, 245, 0.4), rgba(225, 225, 245, 0.2)) !important;
-	outline: none;
-	/*font-weight: bold;*/
+    color: #fff;
+    background: linear-gradient(rgba(225, 225, 245, 0.4), rgba(225, 225, 245, 0.2)) !important;
+    outline: none;
+
+    /*font-weight: bold;*/
 }
 
 .datagrid-header-over {
-	background: linear-gradient(rgba(225, 225, 245, 0.4), rgba(225, 225, 245, 0.2)) !important;
-	color: #fff;
+    background: linear-gradient(rgba(225, 225, 245, 0.4), rgba(225, 225, 245, 0.2)) !important;
+    color: #fff;
 }
 
 .datagrid-toolbar {
-	/*顶部工具栏*/
-	background: transparent;
-	border: none;
+    /*顶部工具栏*/
+    background: transparent;
+    border: none;
+    padding: 10px !important;
 }
 
 .datagrid-pager.pagination {
-	/*底部分页栏*/
-	border: none;
-	background: rgba(25, 25, 25, 0.4);
+    /*底部分页栏*/
+    border: none;
+    background: rgba(25, 25, 25, 0.4);
 }
 
 .pagination-num {
-	/*底部分页栏跳转输入框*/
-	background-color: transparent;
-	color: #fff;
-	border: none !important;
-	border-bottom: 1px solid #fff !important;
-	outline: none;
-	text-align: center;
-	position: relative;
-	top: 2px;
+    /*底部分页栏跳转输入框*/
+    background-color: transparent;
+    color: #fff;
+    border: none !important;
+    border-bottom: 1px solid #fff !important;
+    outline: none;
+    text-align: center;
+    position: relative;
+    top: 2px;
 }
 
 .pagination-page-list {
-	/*分页条数选择*/
-	background-color: rgba(225, 225, 225, 0.2);
-	border: none;
-	padding: 3px 5px;
-	position: relative;
-	top: -1px;
-	color: #eee;
+    /*分页条数选择*/
+    background-color: rgba(225, 225, 225, 0.2);
+    border: none;
+    padding: 3px 5px;
+    position: relative;
+    top: -1px;
+    color: #eee;
 }
 
-.pagination-page-list>option {
-	background-color: rgba(0, 0, 0, .1);
-	color: #333;
-	height: 22px;
-	line-height: 22px;
+.pagination-page-list > option {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+    height: 22px;
+    line-height: 22px;
 }
-
 
 /*表格内 操作按钮控制样式*/
-
-.users-btn-del,
-.users-btn-edit,
-.users-btn-more {
-	border: 1px solid transparent;
-	padding: 1px 5px;
-	font-weight: 100;
+.users-btn-del, .users-btn-edit, .users-btn-more ,.users-btn-upload {
+    border: 1px solid transparent;
+    padding: 1px 5px;
+    font-weight: 100;
 }
-
+.users-btn-upload{
+	color: greenyellow;
+}
+.users-btn-upload:hover{
+	border-left: 1px solid greenyellow;
+    border-right: 1px solid greenyellow;
+}
 .users-btn-del {
-	color: indianred;
+    color: indianred;
 }
 
 .users-btn-del:hover {
-	border-left: 1px solid indianred;
-	border-right: 1px solid indianred;
-	padding: 1px 5px;
-	font-weight: 100;
+    border-left: 1px solid indianred;
+    border-right: 1px solid indianred;
 }
 
 .users-btn-edit {
-	color: skyblue;
+    color: skyblue;
 }
 
 .users-btn-edit:hover {
-	border-left: 1px solid skyblue;
-	border-right: 1px solid skyblue;
-	padding: 1px 5px;
-	font-weight: 100;
+    border-left: 1px solid skyblue;
+    border-right: 1px solid skyblue;
 }
 
 .users-btn-more {
-	color: orange;
+    color: orange;
 }
 
 .users-btn-more:hover {
-	border-left: 1px solid orange;
-	border-right: 1px solid orange;
-	padding: 1px 5px;
-	font-weight: 100;
+    border-left: 1px solid orange;
+    border-right: 1px solid orange;
 }
 
-
 /* date-select */
-
 .calendar-saturday,
 .calendar-sunday {
-	color: rgba(93, 23, 206, 0.438);
+    color: rgba(93, 23, 206, 0.438);
 }
 
 .calendar-selected {
-	border: 0;
-	background-color: rgb(143, 186, 251);
-	border-radius: 50%;
-	color: #eee;
-	font-weight: bold;
+    border: 0;
+    background-color: rgb(143, 186, 251);
+    border-radius: 50%;
+    color: #eee;
+    font-weight: bold;
 }
 
 .calendar-nav-hover {
-	border-radius: 50%;
-	border: 0;
+    border-radius: 50%;
+    border: 0;
 }
 
 .datebox {
-	line-height: 30px;
+    line-height: 30px;
 }
 
 .datebox-button a {
-	color: rgb(88, 88, 158);
+    color: rgb(88, 88, 158);
 }
 
-
 /* easyui-combobox */
-
 .textbox,
-.textbox-addon-right>a,
-.textbox>input {
-	height: 28px !important;
+.textbox-addon-right > a,
+.textbox > input {
+    height: 28px !important;
 }
 
 .combobox-item-hover {
-	background: rgba(75, 132, 255, 0.5);
-	color: #fff;
+    background: rgba(75, 132, 255, 0.5);
+    color: #fff;
 }
 
 .combobox-item-selected {
-	background: rgba(75, 132, 255, 0.8);
+    background: rgba(75, 132, 255, 0.8);
 }
 
-
 /* esayui-check */
-
-
 /*.iradio_minimal-red + span{
 	position: relative;
 	top: 2px;
 	left: 2px;
 }*/
 
-
 /* easyui-dialog */
-
 .panel.window.panel-htop {
-	border-radius: 10px;
+    border-radius: 10px;
 }
 
 .panel.window.panel-htop .panel-icon {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
 .window {
-	/*background: rgba(75, 132, 255, 0.5);*/
-	background: url(../img/dialog-bg.jpg) no-repeat;
-	background-position: center;
-	background-size: cover;
-	box-shadow: 0 0 30px -3px #555;
-	border: none;
-	padding: 5px 0;
+    /*background: rgba(75, 132, 255, 0.5);*/
+    background: url(/img/dialog-bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 30px -3px #555;
+    border: none;
+    padding: 5px 0 0 0;
 }
 
-.window-header>.panel-title {
-	position: relative;
-	color: #333;
-	left: 5px;
+.window-header > .panel-title {
+    position: relative;
+    color: #333;
+    left: 5px;
 }
 
 .window-header .panel-tool a {
-	position: relative;
-	right: 5px;
-	margin-left: 5px;
-	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    right: 5px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.window-proxy-mask,
-.window-mask {
-	background-color: rgba(0, 0, 0, 0.5);
+.window-proxy-mask, .window-mask {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
+.dialog-button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+}
 
 /* easyui-Messager */
-
 .window-proxy-mask,
 .window-mask {
-	/*model模式遮罩*/
-	background-color: rgba(0, 0, 0, 0.7) !important;
+    /*model模式遮罩*/
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .window-shadow {
-	/*窗口阴影*/
-	/*visibility: hidden;*/
-	box-shadow: none;
-	border-radius: 10px;
+    /*窗口阴影*/
+    /*visibility: hidden;*/
+    box-shadow: none;
+    border-radius: 10px;
 }
 
 .messager-button {
-	background: #fff;
-	text-align: right;
-	border: none;
-	border-top: 1px solid #ccc;
+    background: #fff;
+    text-align: right;
+    border: none;
+    border-top: 1px solid #ccc;
 }
 
 .messager-window .l-btn.l-btn-small {
-	background: rgba(225, 225, 225, 0.5);
-	box-shadow: 0 2px 5px -1px #999;
-	border: 1px solid #ccc;
-	border-radius: 0;
-	color: #333;
-	outline: none;
-	transition: all 0.5s;
+    background: rgba(225, 225, 225, 0.5);
+    box-shadow: 0 2px 5px -1px #999;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    color: #333;
+    outline: none;
+    transition: all 0.5s;
 }
 
 .messager-window .l-btn.l-btn-small:hover {
-	animation: doudong 0.8s alternate ease;
-	background: rgba(205, 205, 205, 0.8);
-	color: #555;
-	transform: rotateX(0deg);
+    animation: doudong 0.8s alternate ease;
+    background: rgba(205, 205, 205, 0.8);
+    color: #555;
+    transform: rotateX(0deg);
 }
 
 @keyframes doudong {
-	0% {
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(-5px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}
+    0% {
+        transform: translateY(0px);
+    }
 
+    50% {
+        transform: translateY(-5px);
+    }
 
+    100% {
+        transform: translateY(0px);
+    }
 }

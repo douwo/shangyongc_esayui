@@ -93,7 +93,6 @@ select.form-control{
 }
 .addCarTab a{
 	position: relative;
-	color: rgba(0, 92, 168, 0.8);
 	font-size: 14px;
 	transition: all 0.5s;
 }
@@ -108,13 +107,13 @@ select.form-control{
 	background: #fff;
 }
 .addCarTab a:link{
-	color: rgba(0, 92, 168, 0.8);
+	color: rgb(139, 198, 247);
 }
 .addCarTab a:visited{
 	color: rgba(0, 92, 168, 0.8);
 }
 .addCarTab a:hover{
-	color: rgba(0, 67, 168, 0.8);
+	color: rgb(139, 182, 247);
 }
 .addCarTab a:hover::before{
 	width: 100%;

@@ -1,4 +1,17 @@
-#dhInfoAddForm input[type="button"] {
+/*重置input样式*/
+.xblrPage input[type="text"],
+.xblrPage input[type="number"]
+ {
+	color: #eee;
+	background: transparent !important;
+	padding-left: 5px;
+	height: 24px;
+	line-height: 24px;
+	border: none;
+}
+
+/*改变input按钮样式*/
+.xblrPage input[type="button"] {
 	background: transparent;
 	border-width: 1px;
 	border-color: #fff;
@@ -9,60 +22,51 @@
 	color: #eee;
 	transition: all 0.6s;
 }
-
-#dhInfoAddForm input[type="button"]:hover {
+.xblrPage input[type="button"]:hover {
 	background: rgba(255, 255, 255, 0.3);
 }
 
-#emTable td:nth-child(3) {
+/*悬浮动态下划线*/
+.xblrPage .textbox {
 	background: transparent;
+	border: none;
 }
-
 .xblrPage .textbox::before {
 	content: '';
 	height: 2px;
-	width: 0;
+	width: 0px;
 	background: #fff;
 	position: absolute;
 	left: 0;
 	bottom: 1px;
 	transition: all .5s;
 }
-
 .xblrPage .textbox:hover::before {
 	width: 100%;
 }
 
-.xblrPage input {
-	color: #eee;
-}
-
-.xblrPage input[type='text'] {
-	background: transparent !important;
-	padding-left: 5px;
-}
-
+/*文字输入框获取焦点时样式*/
 .xblrPage input[type='text']:focus {
 	background: rgba(255, 255, 255, 0.8) !important;
 	border-radius: 0;
 	color: #333;
 }
 
-.xblrPage .textbox-focused {
-	/*esayui自带输入框获取焦点时样式*/
-	box-shadow: none;
-}
-
-.xblrPage .textbox {
-	background: transparent;
-	border: none;
-	/*border-bottom: 1px solid #fff;*/
-}
-
+/*所有label文字颜色*/
 .xblrPage label,
 .xblrPage th,
 .xblrPage {
 	color: #eee;
+}
+
+#emTable td:nth-child(3){
+	/*去除a标签所在label背景*/
+	background: transparent
+}
+
+/*日期选择器按钮*/
+.xblrPage .combo-arrow{
+	background-color: transparent;
 }
 
 #dhTable1 {
@@ -73,6 +77,3 @@
 	border-bottom:1px solid #fff
 }
 
-#xblrYear{
-	border: ;
-}
